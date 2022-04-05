@@ -1,5 +1,7 @@
+/*------------------------ TRAFFIC CHART ---------------------------------*/
+
 const trafficCanvas = document.querySelector('#traffic-chart').getContext('2d')
-const data = {
+const trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -10,9 +12,8 @@ const data = {
     }]
 };
 
-
 const trafficOptions = {
-    data,
+    data: trafficData,
     type: 'line',
     options: {
         responsive: true,
@@ -29,8 +30,9 @@ const trafficOptions = {
     }
 }
 
-const lineChart = new Chart(trafficCanvas, trafficOptions)
+const trafficChart = new Chart(trafficCanvas, trafficOptions)
 
+/*----------------------------------------------------====----------------*/
 
 
 
