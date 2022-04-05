@@ -6,15 +6,25 @@ const trafficData = {
     datasets: [{
         data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
         fill: true,
+        aspectRatio: 2.5,
         backgroundColor: 'rgba(116, 119, 191, .3)',
         borderColor: ['rgba(116, 119, 191, 1)'],
         borderWidth: 1,
-    }]
+        animation: {
+            tension: {
+                duration: 3200,
+                easing: 'linear',
+                from:1,
+                to:0,
+                loop: true
+            }
+        }
+    }] 
 };
 
 const trafficOptions = {
-    data: trafficData,
     type: 'line',
+    data: trafficData,
     options: {
         responsive: true,
         scales: {
@@ -30,11 +40,21 @@ const trafficOptions = {
     }
 }
 
+
 const trafficChart = new Chart(trafficCanvas, trafficOptions)
 
-/*----------------------------------------------------====----------------*/
+/*------------------------------------------------------------------------*/
 
 
+/*------------------------ DAILY TRAFFIC ---------------------------------*/
+
+/*------------------------------------------------------------------------*/
+
+
+
+/*------------------------ MOBILE USERS ---------------------------------*/
+
+/*------------------------------------------------------------------------*/
 
 
 
