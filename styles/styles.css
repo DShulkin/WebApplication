@@ -176,7 +176,9 @@ a[href$="link"] :hover {
 #traffic-chart {
     height: 300px;
     width: 300px;
-    border: solid 1px red;
+    padding-bottom: 15px;
+    
+    border-bottom: solid 1px rgb(236, 235, 238);
 }
 
 .member-photo {
