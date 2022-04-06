@@ -174,10 +174,21 @@ a[href$="link"] :hover {
 }
 
 #traffic-chart {
-    height: 300px;
-    width: 300px;
+    min-width: 300px;
     padding-bottom: 15px;
-    
+    border-bottom: solid 1px rgb(236, 235, 238);
+}
+
+#bar-chart {
+    min-width: 300px;
+    padding-bottom: 15px;
+    border-bottom: solid 1px rgb(236, 235, 238);
+}
+
+#doughnut-chart {
+    /* margin:30px; */
+    min-width: 300px;
+    padding-bottom: 15px;
     border-bottom: solid 1px rgb(236, 235, 238);
 }
 
