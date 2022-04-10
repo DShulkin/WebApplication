@@ -1,17 +1,17 @@
+/*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
 
-
-  const buttons = document.getElementsByClassName('switch-input')
-  const slider = document.querySelector('.switch-selection')
-  Array.from(buttons).forEach(button => {
-    button.onclick = e => {
-        const position = e.currentTarget.getBoundingClientRect()
-        console.log(position)
-        console.log(e.target)
+  const options = document.querySelectorAll('.slider-label')
+  const slider = document.querySelector('.slider')
+  Array.from(options).forEach(selection => {
+    selection.onclick = el => {
+        const position = selection.getBoundingClientRect()
         const { left } = position
-        slider.style.left = left
-        
+        slider.style.left = left + 'px'
     }
   })
+
+/*------------------------------------------------------------------------*/
+
 
 /*------------------------ TRAFFIC CHART ---------------------------------*/
 

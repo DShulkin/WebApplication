@@ -139,7 +139,7 @@ a[href$="link"] :hover {
     position: relative;
 }
 
-#alert {
+/* #alert {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,14 +170,14 @@ a[href$="link"] :hover {
 
 #alert button:hover { 
     color: red;
-}
+} */
 
-.switch-container {
+.slider-container {
     border: none;
     margin: 0;
 }
 
-.switch-nav {
+.slider-nav {
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -186,41 +186,33 @@ a[href$="link"] :hover {
     overflow:hidden;
 }
 
-.switch-input {
+.slider-input {
     display: none;
 }
 
-.switch-input:checked + .switch-label {
-     /* background-color: rgb(242, 134, 134);  */
+.slider-input:checked + .slider-label {
     color: white;
 }
 
-.switch-input:checked + .switch-selection {
-    transition: 0.15s ease-out;
-}
 
-.switch-label {
+.slider-label {
     position: relative;
     z-index: 2;
-    width: 115px;
+    width: 120px;
     line-height: 40px;
     font-size: 16px;
     text-align: center;
     cursor: pointer;
 }
 
-.switch-selection {
+.slider {
     position: absolute;
-    /* display: block;
-    z-index: 1;
-    overflow: hidden
-    padding: 0 !important; */
     width: 120px;
     border-radius: 20px;
-    height: 40px;;
+    height: 40px;
     background-color: #65bd63;;
-    transition: 0.5s ease-out;
-}
+    transition: 0.3s ease-out;
+} 
 
 
 #traffic-chart {
