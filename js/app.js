@@ -1,3 +1,18 @@
+
+
+  const buttons = document.getElementsByClassName('switch-input')
+  const slider = document.querySelector('.switch-selection')
+  Array.from(buttons).forEach(button => {
+    button.onclick = e => {
+        const position = e.currentTarget.getBoundingClientRect()
+        console.log(position)
+        console.log(e.target)
+        const { left } = position
+        slider.style.left = left
+        
+    }
+  })
+
 /*------------------------ TRAFFIC CHART ---------------------------------*/
 
 const trafficCanvas = document.querySelector('#traffic-chart').getContext('2d')
@@ -46,7 +61,6 @@ const trafficChart = new Chart(trafficCanvas, trafficOptions)
 
 /*------------------------------------------------------------------------*/
 
-
 /*------------------------ DAILY TRAFFIC ---------------------------------*/
 const dailyCanvas = document.querySelector('#bar-chart').getContext('2d')
 
@@ -82,8 +96,6 @@ const dailyOptions = {
 const barChart = new Chart(dailyCanvas, dailyOptions)
 
 /*------------------------------------------------------------------------*/
-
-
 
 /*------------------------ MOBILE USERS ---------------------------------*/
 
@@ -125,6 +137,3 @@ const mobileOptions = {
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 /*------------------------------------------------------------------------*/
-
-
-
