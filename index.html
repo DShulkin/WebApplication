@@ -70,18 +70,29 @@
     </p>
     </div>
 
-    <!---- TRAFFIC ---->
+    <!---- TRAFFIC NAVIGATION ---->
     <section class="traffic">
         <div class='traffic-header'>
             <h3 class="sub-headline">Traffic</h3>
-            <ul class='traffic-nav'>
-                <li class='traffic-nav-link'>Hourly</li>
-                <li class='traffic-nav-link'>Daily</li>
-                <li class='traffic-nav-link active'>Weekly</li>
-                <li class='traffic-nav-link'>Monthly</li>
-            </ul>
+            <fieldset class="switch-container">
+                <form class='switch-nav'>
+                    <input type="radio" class="switch-input" name="option" id="hourly" checked>
+                    <label for="hourly" class="switch-label">Hourly</label>
+    
+                    <input type="radio" class="switch-input" name="option" id="daily">
+                    <label for="daily" class="switch-label">Daily</label>
+    
+                    <input type="radio" class="switch-input" name="option" id="weekly">
+                    <label for="weekly" class="switch-label">Weekly</label>
+
+                    <input type="radio" class="switch-input" name="option" id="monthly">
+                    <label for="monthly" class="switch-label">Monthly</label>
+                    <span class="switch-selection"></span>
+                </form>
+            </fieldset>
         </div>
 
+         <!---- TRAFFIC CHART ---->
         <div class="widget-container-full">
             <!-- line graph -->
             <canvas id="traffic-chart" aria-label="Traffic Chart" role="img"></canvas>
@@ -259,3 +270,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 </body>
+
+<!-- <div class="switches">
+    <label class="switch" onclick="">
+        <input type="checkbox">
+        <span>
+          <span>Hourly</span>
+          <span>Daily</span>
+          <span>Weekly</span>
+          <span>Monthly</span>
+          <a></a>
+        </span>
+      </label>
+    <input type="checkbox">
+    </div> -->
