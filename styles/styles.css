@@ -1,6 +1,6 @@
 /* ====================== FONTS ====================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, fieldset, label, input, form  {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -172,12 +172,12 @@ a[href$="link"] :hover {
     color: red;
 }
 
-.traffic-container {
+.switch-container {
     border: none;
     margin: 0;
 }
 
-.traffic-nav {
+.switch-nav {
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -204,20 +204,20 @@ a[href$="link"] :hover {
     z-index: 2;
     width: 115px;
     line-height: 40px;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
     cursor: pointer;
 }
 
 .switch-selection {
     position: absolute;
-    /* display: block; */
-    padding: 0 !important;
+    /* display: block;
     z-index: 1;
+    overflow: hidden
+    padding: 0 !important; */
     width: 120px;
     border-radius: 20px;
-    height: 40px;
-    overflow: hidden;
+    height: 40px;;
     background-color: #65bd63;;
     transition: 0.5s ease-out;
 }
