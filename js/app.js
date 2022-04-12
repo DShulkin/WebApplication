@@ -3,12 +3,15 @@
   const options = document.querySelectorAll('.slider-label')
   const slider = document.querySelector('.slider')
   Array.from(options).forEach(selection => {
-    selection.onclick = el => {
+    selection.onclick = selected => {
         const position = selection.getBoundingClientRect()
         const { left } = position
         slider.style.left = left + 'px'
     }
   })
+
+const labelWidth = options[0].clientWidth
+slider.style.width = `${labelWidth}px`
 
 /*------------------------------------------------------------------------*/
 

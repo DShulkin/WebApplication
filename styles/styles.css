@@ -179,101 +179,12 @@ a[href$="link"] :hover {
 
 /* ------------------------SLIDER------------------------- */
 
-/* =================================== */
-/* =================================== */
-/* .slider-container {
-    margin: 0;
-    border: none;
-}
-
 .slider-nav {
     display: flex;
     align-content: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 0 !important;
-}
-
-.slider-input {
-    display: none;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    overflow: visible;
-}
-
-
-[type=checkbox], [type=file], [type=radio] {
-    margin: 0 0 1rem;
-}
-
-[type=checkbox], [type=radio] {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0;
-}
-
-*, ::after, ::before {
-    -webkit-box-sizing: inherit;
-    box-sizing: inherit;
-}
-
-.slider-label:nth-child(2):nth-last-child(12), 
-.slider-label:nth-child(2):nth-last-child(12) ~ .slider-label, 
-.slider-label label:nth-child(2):nth-last-child(12) ~ slider {
-    width: 16.6%;
-}
-
-[type=checkbox]+.slider-label[for], [type=radio]+.slider-label[for] {
-    cursor: pointer;
-}
-
-.slider-input + .slider-label {
-    z-index: 2;
-}
-
-
-.slider-label:nth-child(2):nth-last-child(12) ~ .slider-input:checked:nth-child(9) + .slider-label ~ .slider {
-    left: 66.4%;
-}
-
-.slider-label:nth-child(2):nth-last-child(12) ~ .slider-input:checked:nth-child(9) + .slider-label ~ .slider {
-    left: 16.6%;
-}
-
-.slider  {
+    justify-content: space-between; 
     border-radius: 20px;
-    background-color: #70c66b;
-    position: absolute;
-    left: 0;
-    padding: 0;
-    z-index: 1;
-    width: 120px;
-    height: 40px;
-}
-
-.switch-toggle a {
-    display: block;
-    transition: all 0.2s ease-out;
-} */
-/* =================================== */
-/* =================================== */
-
-
-
-
-.slider-container {
-    border: none;
-    margin: 0;
-}
-
-.slider-nav {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    border: solid 1px red;  
-    border-radius: 20px;
-    overflow:hidden;
+    margin-bottom: 20px;
 }
 
 .slider-input {
@@ -298,7 +209,6 @@ a[href$="link"] :hover {
 .slider {
     z-index: -1;
     position: absolute;
-    width: 120px;
     border-radius: 20px;
     height: 40px;
     background-color: #65bd63;;
