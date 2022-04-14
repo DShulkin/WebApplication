@@ -1,17 +1,58 @@
 /*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
 
-  const options = document.querySelectorAll('.slider-label')
-  const slider = document.querySelector('.slider')
-  Array.from(options).forEach(selection => {
-    selection.onclick = selected => {
-        const position = selection.getBoundingClientRect()
-        const { left } = position
-        slider.style.left = left + 'px'
-    }
-  })
+// the 'options 'variable selects all label elements 
+// the 'slider' variable selects the span element
 
-const labelWidth = options[0].clientWidth
-slider.style.width = `${labelWidth}px`
+/*  sliderStyles function: 
+    the 'labelWidth' variable - retrieves the width/clientWidth of the label element and sets 
+    the number as its value.
+    --- NOTE: it doesn't matter what index value of the four
+        labels are chosen because it is setting a universal size for each of them. 
+        this variable stores the width as its value ---
+
+// the first line of css converts the value of 'labelWidth' into pixels - 
+   setting the width of the slider.
+
+// the index value of options is set to 0 so the the first label is highlighted/selected.
+   it is value positioned left is based on the value of its offsetLeft property 
+
+        NOTE:
+        element.getBoundingClientRect method returns a DOMRec object providing information about the 
+        size of an element and its position relative to the viewport.
+*/
+
+
+// Array.from: for each selection (label) 
+/* the position variable retrieves information about the size of the element selected and 
+   stores that information as its value
+*/
+// the left variable retrieves the x coordinate 
+
+const options = document.querySelectorAll('.slider-label')
+const slider = document.querySelector('.slider')
+
+const sliderStyles = () => {
+  const labelWidth = options[0].clientWidth;
+  slider.style.width = `${labelWidth}px`;
+  slider.style.left = `${options[0].getBoundingClientRect().left}px`
+  console.log('labelWidth:', labelWidth)
+  console.log( 'options:', options)
+  console.log(  'SliderWidth:', slider.style.width = `${labelWidth}px`)
+  console.log(  'SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
+}
+
+window.addEventListener('load', sliderStyles)
+window.addEventListener('resize', sliderStyles)
+
+Array.from(options).forEach(selection => {
+  selection.addEventListener('click', (label) => {
+    const position = selection.getBoundingClientRect()
+    const { left } = position
+    slider.style.left = left + 'px'
+    // console.log('position:',position)
+    // console.log('left:',left)
+  })
+})
 
 /*------------------------------------------------------------------------*/
 
