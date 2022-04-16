@@ -139,7 +139,7 @@ a[href$="link"] :hover {
     position: relative;
 }
 
-/* #alert {
+#alert-banner {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -151,26 +151,26 @@ a[href$="link"] :hover {
     color: white
 }
 
-#alert p {
+#alert-banner p {
     font-size: 14px;
 }
 
-#alert p bold {
+#alert-banner p bold {
     font-weight:900;
 }
 
 
-#alert button {
+#alert-banner button {
     color: white;
     border: none;
-    padding-left: 25px;
+    padding-left: 10px;
     background-color: transparent;
     transition: all 0.2s ease-out;
 }
 
-#alert button:hover { 
+#alert-banner button:hover { 
     color: red;
-} */
+}
 
 
 
@@ -178,7 +178,6 @@ a[href$="link"] :hover {
  
 
 /* ------------------------SLIDER------------------------- */
-
 .slider-nav {
     display: flex;
     align-content: center;
@@ -216,7 +215,9 @@ a[href$="link"] :hover {
 }  
 
 /* ------------------------------------------------- */
-
+canvas {
+  max-width: 100%;
+}
 
 #traffic-chart {
     min-width: 300px;

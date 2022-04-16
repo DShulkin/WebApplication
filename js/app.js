@@ -1,3 +1,13 @@
+/*------------------------------- ALERT ----------------------------------------*/
+let alertBanner = document.querySelector('#alert-banner')
+alertBanner.innerHTML = 
+   `<p> <strong>Alert:</strong> You have unread messages
+    <button aria-label='delete item'type='button'>x</button>
+    </p>`
+
+/*------------------------------------------------------------------------*/
+
+
 /*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
 
 // the 'options 'variable selects all label elements 
