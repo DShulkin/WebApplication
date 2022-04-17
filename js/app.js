@@ -1,11 +1,33 @@
+/*-------------------------- BELL CLICK EVENT -----------------------------------*/
+const bell = document.querySelector('.bell')
+const notificationSignal = document.querySelector('.notification-signal')
+bell.addEventListener("click", () => {
+    // const alertBox = document.querySelector('#')
+    notificationSignal.style.display = 'none';
+
+})
+
+// notifications.innerHTML = 
+// `<div class = "messages"> 
+// <ul> </ul>
+// </div>`  
+/*-----------------------------------------------------------------------------*/
+
+
 /*------------------------------- ALERT ----------------------------------------*/
 let alertBanner = document.querySelector('#alert-banner')
 alertBanner.innerHTML = 
-   `<p> <strong>Alert:</strong> You have unread messages
-    <button aria-label='delete item'type='button'>x</button>
+   `<p><strong>Alert:</strong> You have unread messages.
+    <button class="alert-banner-close" aria-label='delete item'type='button'>x</button>
     </p>`
 
-/*------------------------------------------------------------------------*/
+    alertBanner.addEventListener('click', e => {
+        const element = e.target
+        if(element.classList.contains('alert-banner-close')) {
+            alertBanner.style.display = 'none'
+        }
+    })
+/*-----------------------------------------------------------------------------*/
 
 
 /*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
@@ -112,8 +134,8 @@ const trafficOptions = {
 
 
 const trafficChart = new Chart(trafficCanvas, trafficOptions)
-
 /*------------------------------------------------------------------------*/
+
 
 /*------------------------ DAILY TRAFFIC ---------------------------------*/
 const dailyCanvas = document.querySelector('#bar-chart').getContext('2d')
