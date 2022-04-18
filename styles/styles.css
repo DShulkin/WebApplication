@@ -139,22 +139,39 @@ a[href$="link"] :hover {
     position: relative;
 }
 
+/* .notification-button {
+    background: no-repeat url("../svgs/bell.svg");
+    fill:#fff;
+    background-color: none;
+    border: none;
+    height: 25px;
+    width: 25px;
+} */
+
+.notification-button {
+    width: 35px;
+    background-color: transparent;
+    border: none;
+}
+
 .notification-signal {
-    background: rgba(255, 82, 82, 1);
+    background: rgb(157, 255, 82);
     position: absolute;
     z-index: 2;
+    top: 20px;
+    margin-left: 6px;
     border-radius: 50%;
     height: 10px;
     width: 10px;
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+    box-shadow: 0 0 0 0 rgb(157 255 82);
     animation: pulse-red 2s infinite;
-  }
+}
 
   @keyframes pulse-red {
 	0% {
 		transform: scale(0.85);
-		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+		box-shadow: 0 0 0 0 rgba(157, 255, 82, 0.7);
 	}
 	
 	70% {
