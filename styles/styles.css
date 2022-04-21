@@ -63,7 +63,7 @@ header {
     font-size: 1.5em;
 }
 
-.bell {
+.notifications {
     display: flex;
     height:1.6em;
 }
@@ -139,14 +139,6 @@ a[href$="link"] :hover {
     position: relative;
 }
 
-/* .notification-button {
-    background: no-repeat url("../svgs/bell.svg");
-    fill:#fff;
-    background-color: none;
-    border: none;
-    height: 25px;
-    width: 25px;
-} */
 
 .notification-button {
     width: 35px;
@@ -158,7 +150,6 @@ a[href$="link"] :hover {
     background: rgb(157, 255, 82);
     position: absolute;
     z-index: 2;
-    top: 20px;
     margin-left: 6px;
     border-radius: 50%;
     height: 10px;
