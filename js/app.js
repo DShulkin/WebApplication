@@ -1,120 +1,64 @@
 /*-------------------------- BELL CLICK EVENT -----------------------------------*/
-const bell = document.querySelector('.notification-button')
-const notificationSignal = document.querySelector('.notification-signal')
-const dropDown = document.querySelector('.dropDown')
-bell.addEventListener("click", () => {
-    dropDown.insertAdjacentHTML(afterend,
-        `<ul class="dropDown-menu active"> 
-            <li class="message"><h3>Welcome</h3></li>
-            <li class="message"><h3>Getting Started</h3></li>
-        </ul>`
-    )
-    // const alertBox = document.querySelector('#')
-    const dropDownMenu = document.querySelector('.dropDown-menu')
-    notificationSignal.style.display = 'none';
-    dropDown.style.position = 'relative'
-    dropDown.style.position = 'absolute'
-    dropDownMenu.style.left = '0'
-    dropDownMenu.style.top = 'calc(100% + .25rem)'
-    dropDownMenu.style.backgroundColor = '#fff'
-    dropDownMenu.style.borderRadius = '.25rem'
-    dropDownMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, .1)'
-    dropDownMenu.style.opacity = '0'
-    dropDownMenu.style.transition = 'opacity 150ms ease-in-out'
-    dropDownMenu.active.style.opacity = '1'    
-})
-
-
-
-
-
-//SHORTER SYNTAX
 // const bell = document.querySelector('.notification-button')
 // const notificationSignal = document.querySelector('.notification-signal')
+// const dropDown = document.querySelector('.dropDown')
 // bell.addEventListener("click", () => {
-//     document.querySelector('.dropDown').insertAdjacentHTML(afterend,
+//     dropDown.insertAdjacentHTML('afterend',
 //         `<ul class="dropDown-menu active"> 
 //             <li class="message"><h3>Welcome</h3></li>
 //             <li class="message"><h3>Getting Started</h3></li>
 //         </ul>`
 //     )
+
+//     const dropDownMenu = document.querySelector('.dropDown-menu')
 //     notificationSignal.style.display = 'none';
-
-// })
-
-
-
-
-
-
-//MIGHT NEED TO ADD A SECOND CLICK EVENT FOR WHEN CLICKING THE BELL ICON 
-//...TO HIDE THE NOTIFICATIONS.
-
-// DROPDOWN MENU: for up here^^
-// Need to hide the display until the bell is clicked  --- REFERENCE the note above^^
-
-//FUNCTIONALITY:
-// -- When the button bell is clicked, the event listener fires
-//    and loads/inserts the HTML for the drop down menu 
-// -- The inserted HTML is then referenced as a variable in js to then style the elements
-
-
-// dropDown.insertAdjacentHTML(afterend,
-//         `<ul class="dropDown-menu active"> 
-//             <li class="message"><h3>Welcome</h3></li>
-//             <li class="message"><h3>Getting Started</h3></li>
-//         </ul>`
-//  )
-
-
-// const dropDown = document.querySelector('.dropDown')
 //     dropDown.style.position = 'relative'
-
-//const dropDownMenu = document.querySelector('.dropDown-menu')
+//     dropDown.style.border = '1px solid red'
 //     dropDown.style.position = 'absolute'
 //     dropDownMenu.style.left = '0'
 //     dropDownMenu.style.top = 'calc(100% + .25rem)'
 //     dropDownMenu.style.backgroundColor = '#fff'
 //     dropDownMenu.style.borderRadius = '.25rem'
 //     dropDownMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, .1)'
-//     dropDownMenu.style.opacity = '0'
+//     // dropDownMenu.style.opacity = '0'
 //     dropDownMenu.style.transition = 'opacity 150ms ease-in-out'
-
-//     dropDownMenu.active.style.opacity = '1'    
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////
-//INITIAL TRY
-//  dropDown.innerHTML = 
-//     `<div class="dropDown"> 
-//         <ul class="dropDown-Menu"> 
-//             <li class="message"><h3>Welcome</h3></li>
-//             <li class="message"><h3>Getting Started</h3></li>
-//         </ul>
-//     </div>`
-/////////////////////////////////////////////////////////////////////
+//     // dropDownMenu.active.style.opacity = '1'    
+// })
 /*-----------------------------------------------------------------------------*/
-
+const bell = document.querySelector('.notification-button')
+const notificationSignal = document.querySelector('.notification-signal')
 
 /*------------------------------- ALERT ----------------------------------------*/
-let alertBanner = document.querySelector('#alert-banner')
+const alertBanner = document.querySelector('#alert-banner')
 alertBanner.innerHTML = 
    `<p>
         <strong>Alert:</strong> You have unread messages.
-        <button class="alert-banner-close" aria-label='delete item'type='button'>x</button>
+        <button class="close-button" aria-label='close alert' type='button'>x</button>
     </p>`
 
-    alertBanner.addEventListener('click', e => {
-        const element = e.target
-        if(element.classList.contains('alert-banner-close')) {
-            alertBanner.style.display = 'none'
-        }
-    })
+const dropDown = document.querySelector('.dropDown')
+alertBanner.addEventListener('click', e => {
+    alertBanner.style.background = 'red' //DELETE LATER
+    const showMessages = e.target
+    if(showMessages.classList.contains('.alert-banner')) {
+        dropDown.style.display = 'block'
+    }
+})
+
+const closeAlert = document.querySelector('.close-button').addEventListener('click', e => {
+    const removeAlert = e.target
+    if(removeAlert.classList.contains('close-button')) {
+        alertBanner.style.display = 'none'
+    }
+})
+
+// alertBanner.addEventListener("click", () => {
+    
+// }
+//     dropDown.style.position = 'relative'
+
+
+
 /*-----------------------------------------------------------------------------*/
 
 

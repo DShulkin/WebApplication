@@ -185,7 +185,8 @@ a[href$="link"] :hover {
     background: #7477bf;
     padding: 20px; 
     height: 15px;
-    color: white
+    color: white;
+    border: none;
 }
 
 #alert-banner p {
