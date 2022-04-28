@@ -1,48 +1,13 @@
-/*-------------------------- BELL CLICK EVENT -----------------------------------*/
-// const bell = document.querySelector('.notification-button')
-// const notificationSignal = document.querySelector('.notification-signal')
-// const dropDown = document.querySelector('.dropDown')
-// bell.addEventListener("click", () => {
-//     dropDown.insertAdjacentHTML('afterend',
-//         `<ul class="dropDown-menu active"> 
-//             <li class="message"><h3>Welcome</h3></li>
-//             <li class="message"><h3>Getting Started</h3></li>
-//         </ul>`
-//     )
-
-//     const dropDownMenu = document.querySelector('.dropDown-menu')
-//     notificationSignal.style.display = 'none';
-//     dropDown.style.position = 'relative'
-//     dropDown.style.border = '1px solid red'
-//     dropDown.style.position = 'absolute'
-//     dropDownMenu.style.left = '0'
-//     dropDownMenu.style.top = 'calc(100% + .25rem)'
-//     dropDownMenu.style.backgroundColor = '#fff'
-//     dropDownMenu.style.borderRadius = '.25rem'
-//     dropDownMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, .1)'
-//     // dropDownMenu.style.opacity = '0'
-//     dropDownMenu.style.transition = 'opacity 150ms ease-in-out'
-//     // dropDownMenu.active.style.opacity = '1'    
-// })
-/*-----------------------------------------------------------------------------*/
-const bell = document.querySelector('.notification-button')
-const notificationSignal = document.querySelector('.notification-signal')
-
 /*------------------------------- ALERT ----------------------------------------*/
-const alertBanner = document.querySelector('#alert-banner')
-alertBanner.innerHTML = 
-   `<p>
-        <strong>Alert:</strong> You have unread messages.
-        <button class="close-button" aria-label='close alert' type='button'>x</button>
-    </p>`
 
+const alertBanner = document.querySelector('#alert-banner')
 const dropDown = document.querySelector('.dropDown')
-alertBanner.addEventListener('click', e => {
-    alertBanner.style.background = 'red' //DELETE LATER
-    const showMessages = e.target
-    if(showMessages.classList.contains('.alert-banner')) {
-        dropDown.style.display = 'block'
-    }
+
+alertBanner.addEventListener('click', e => { 
+    dropDown.style.display = 'flex'
+    dropDown.style.transition = '.3s ease-in'
+    alertBanner.style.transition = '.3s ease-in'
+    alertBanner.style.marginBottom = '100px'
 })
 
 const closeAlert = document.querySelector('.close-button').addEventListener('click', e => {
@@ -51,13 +16,7 @@ const closeAlert = document.querySelector('.close-button').addEventListener('cli
         alertBanner.style.display = 'none'
     }
 })
-
-// alertBanner.addEventListener("click", () => {
-    
-// }
-//     dropDown.style.position = 'relative'
-
-
+///////////////////////////////////////////////////////////////
 
 /*-----------------------------------------------------------------------------*/
 
@@ -245,3 +204,64 @@ const mobileOptions = {
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 /*------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------- BELL CLICK EVENT -----------------------------------*/
+// const bell = document.querySelector('.notification-button')
+// const notificationSignal = document.querySelector('.notification-signal')
+// const dropDown = document.querySelector('.dropDown')
+// bell.addEventListener("click", () => {
+//     dropDown.insertAdjacentHTML('afterend',
+//         `<ul class="dropDown-menu active"> 
+//             <li class="message"><h3>Welcome</h3></li>
+//             <li class="message"><h3>Getting Started</h3></li>
+//         </ul>`
+//     )
+
+//     const dropDownMenu = document.querySelector('.dropDown-menu')
+//     notificationSignal.style.display = 'none';
+//     dropDown.style.position = 'relative'
+//     dropDown.style.border = '1px solid red'
+//     dropDown.style.position = 'absolute'
+//     dropDownMenu.style.left = '0'
+//     dropDownMenu.style.top = 'calc(100% + .25rem)'
+//     dropDownMenu.style.backgroundColor = '#fff'
+//     dropDownMenu.style.borderRadius = '.25rem'
+//     dropDownMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, .1)'
+//     // dropDownMenu.style.opacity = '0'
+//     dropDownMenu.style.transition = 'opacity 150ms ease-in-out'
+//     // dropDownMenu.active.style.opacity = '1'    
+// })
+/*-----------------------------------------------------------------------------*/
+const bell = document.querySelector('.notification-button')
+const notificationSignal = document.querySelector('.notification-signal')
