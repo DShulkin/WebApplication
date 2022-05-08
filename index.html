@@ -64,22 +64,19 @@
         <div class="tab"><!--grey tab--></div> 
     </div>  
 
-    <!---- JS ALERT ---->   
-    <div class="alert-banner" id="alert-banner">
-        <p>
-            <strong>Alert:</strong> You have unread messages.
-        </p>
-
-        <span class="button Container">
-            <button class="close-button" aria-label='close alert' type='button'>x</button>
-        </span>
-
-
-        <ul class="dropDown"> 
-            <li class="message"><h4>Welcome</h3></li>
-            <li class="message"><h4>Getting Started</h3></li>
-        </ul>
+    <!---- JS ALERT ---->  
+    <div class="alert" id="alert-button">
+        <div class="dropdown" data-dropdown>
+            <button class="link" data-dropdown-button><strong>Alert:</strong> You have unread messages.</button>
+            <!-- <button class="close-alert" aria-label='close alert' type='button'>x</button> -->
+            <ul class ="dropdown-menu">
+                <li>Welcome</li>
+                <li>Getting Started</li>
+            </ul>
+        </div>
     </div>
+        
+
 
     <!---- TRAFFIC NAVIGATION ---->
         <section class="traffic-container">

@@ -1,22 +1,35 @@
-/*------------------------------- ALERT ----------------------------------------*/
+// /*------------------------------- ALERT ----------------------------------------*/
+const alert = document.querySelector('#alert-button')
 
-const alertBanner = document.querySelector('#alert-banner')
-const dropDown = document.querySelector('.dropDown')
-
-alertBanner.addEventListener('click', e => { 
-    dropDown.style.display = 'flex'
-    dropDown.style.transition = '.3s ease-in'
-    alertBanner.style.transition = '.3s ease-in'
-    alertBanner.style.marginBottom = '100px'
-})
-
-const closeAlert = document.querySelector('.close-button').addEventListener('click', e => {
-    const removeAlert = e.target
-    if(removeAlert.classList.contains('close-button')) {
-        alertBanner.style.display = 'none'
+document.addEventListener('click', e => {
+    const isDropDownButton = e.target.matches('[data-dropdown-button]')
+    if (!isDropDownButton && e.target.closest('[data-dropdown]') != null) return 
+    
+    let currentDropDown
+    if (isDropDownButton) {
+        currentDropDown = e.target.closest('[data-dropdown]')
+        currentDropDown.classList.toggle('active')
+        alert.style.paddingBottom = '55px'
+        alert.style.transition = '.2s ease-in-out'
     }
+
+    document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
+        if(dropdown === currentDropDown) return
+        dropdown.classList.remove('active')
+        alert.style.paddingBottom = 'initial'
+        alert.style.transition = '.2s ease-in-out'
+    })    
 })
-///////////////////////////////////////////////////////////////
+
+// const closeAlert = document.querySelector('.close-alert').addEventListener('click', e => {
+//     if (e.target.classList.contains('close-alert')) {
+//         alert.style.display = 'none'
+//     }
+// })
+
+
+
+
 
 /*-----------------------------------------------------------------------------*/
 
