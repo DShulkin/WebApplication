@@ -212,7 +212,7 @@ a[href$="link"] :hover {
 
 
 .link {
-    /* margin-right: auto; */
+    margin-right: auto;
     background: none;
     border: none;
     text-decoration: none;

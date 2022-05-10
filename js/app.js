@@ -4,20 +4,30 @@ const alert = document.querySelector('#alert-button')
 document.addEventListener('click', e => {
     const isDropDownButton = e.target.matches('[data-dropdown-button]')
     if (!isDropDownButton && e.target.closest('[data-dropdown]') != null) return 
+         console.log('The value for isDropDownButton is:', isDropDownButton,'1')         
     
-    let currentDropDown
+    let isDropDown
     if (isDropDownButton) {
-        currentDropDown = e.target.closest('[data-dropdown]')
-        currentDropDown.classList.toggle('active')
+        isDropDown = e.target.closest('[data-dropdown]')
+        isDropDown.classList.toggle('active')
         alert.style.paddingBottom = '55px'
         alert.style.transition = '.2s ease-in-out'
-    }
+            console.log(isDropDown, '2')
+
+
+        if (isDropDown && !isDropDown.classList.contains('active')) {
+            alert.style.paddingBottom = 'initial'
+            alert.style.transition = '.2s ease-in-out'
+        }
+    } 
 
     document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
-        if(dropdown === currentDropDown) return
+        if (dropdown === isDropDown) return
         dropdown.classList.remove('active')
         alert.style.paddingBottom = 'initial'
         alert.style.transition = '.2s ease-in-out'
+            console.log('dropdown is removed 3')
+            console.log(dropdown, '3')
     })    
 })
 
@@ -28,7 +38,22 @@ document.addEventListener('click', e => {
 // })
 
 
+//CURRENT PROBLEM:
 
+//  When the close button is displayed on the page, the dropdown menu no longer drops down/appears at all,
+//  but the other styles through javascript are applied such as paddingBottom. 
+
+//      What is preventing the dropdown menu to appear when the close button is displayed? 
+
+
+// Hello all! 
+
+// I am going for ‘exceeds expectations’ so I started working on the alert section.
+
+// Right now, when the close-alert button is displayed on the page, the dropdown menu no longer drops down/appears at all,
+//  but the other styles through javascript are applied such as paddingBottom. 
+
+// I’m not sure why displaying the close-alert button disrupts the functionality of the dropdown
 
 
 /*-----------------------------------------------------------------------------*/
