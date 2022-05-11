@@ -127,7 +127,7 @@ a[href$="link"] :hover {
 }
 
 .tab {
-    height: 65px;
+    height: 67px;
     background-color: rgb(236, 235, 238);
     border-bottom: 1px solid rgb(207, 205, 211);
     border-left: 1px solid rgb(207, 205, 211);
@@ -210,6 +210,11 @@ a[href$="link"] :hover {
     transition: opacity .2s ease-in-out, transform .2s ease-in-out;
 }
 
+.dropdown-menu > li {
+    padding: 10px 15px;
+    /* border:1px solid white; */
+    /* border-radius: 20px; */
+}
 
 .link {
     margin-right: auto;
@@ -234,7 +239,6 @@ a[href$="link"] :hover {
     transform: translateY(0);
     pointer-events: auto;
 }
-
 
 /* ================== SLIDER ==================  */
 .slider-nav {

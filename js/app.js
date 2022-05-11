@@ -10,17 +10,16 @@ document.addEventListener('click', e => {
     if (isDropDownButton) {
         isDropDown = e.target.closest('[data-dropdown]')
         isDropDown.classList.toggle('active')
-        alert.style.paddingBottom = '55px'
+        alert.style.paddingBottom = '85px'
         alert.style.transition = '.2s ease-in-out'
             console.log(isDropDown, '2')
 
-
-        if (isDropDown && !isDropDown.classList.contains('active')) {
+        if (!isDropDown.classList.contains('active')) {
             alert.style.paddingBottom = 'initial'
             alert.style.transition = '.2s ease-in-out'
         }
     } 
-
+    
     document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
         if (dropdown === isDropDown) return
         dropdown.classList.remove('active')
@@ -37,25 +36,6 @@ document.addEventListener('click', e => {
 //     }
 // })
 
-
-//CURRENT PROBLEM:
-
-//  When the close button is displayed on the page, the dropdown menu no longer drops down/appears at all,
-//  but the other styles through javascript are applied such as paddingBottom. 
-
-//      What is preventing the dropdown menu to appear when the close button is displayed? 
-
-
-// Hello all! 
-
-// I am going for ‘exceeds expectations’ so I started working on the alert section.
-
-// Right now, when the close-alert button is displayed on the page, the dropdown menu no longer drops down/appears at all,
-//  but the other styles through javascript are applied such as paddingBottom. 
-
-// I’m not sure why displaying the close-alert button disrupts the functionality of the dropdown
-
-
 /*-----------------------------------------------------------------------------*/
 
 
@@ -65,13 +45,13 @@ document.addEventListener('click', e => {
 // the 'slider' variable selects the span element
 
 /*  sliderStyles function: 
-    the 'labelWidth' variable - retrieves the width/clientWidth of the label element and sets 
-    the number as its value.
+    the 'labelWidth' variable - retrieves the width of the label element and sets 
+    that number as its value.
     --- NOTE: it doesn't matter what index value of the four
-        labels are chosen because it is setting a universal size for each of them. 
+        labels are chosen because it is setting the same size for each of them. 
         this variable stores the width as its value ---
 
-// the first line of css converts the value of 'labelWidth' into pixels - 
+// the second line of css converts the value of 'labelWidth' into pixels - 
    setting the width of the slider.
 
 // the index value of options is set to 0 so the the first label is highlighted/selected.
