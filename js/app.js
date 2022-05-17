@@ -1,10 +1,12 @@
 // /*------------------------------- ALERT ----------------------------------------*/
 const alert = document.querySelector('#alert-button')
+const bell = document.querySelector('.notification-button')
+const notificationSignal = document.querySelector('.notification-signal')
 
 document.addEventListener('click', e => {
     const isDropDownButton = e.target.matches('[data-dropdown-button]')
     if (!isDropDownButton && e.target.closest('[data-dropdown]') != null) return 
-         console.log('The value for isDropDownButton is:', isDropDownButton,'1')         
+        //  console.log('The value for isDropDownButton is:', isDropDownButton,'1')         
     
     let isDropDown
     if (isDropDownButton) {
@@ -12,29 +14,57 @@ document.addEventListener('click', e => {
         isDropDown.classList.toggle('active')
         alert.style.paddingBottom = '85px'
         alert.style.transition = '.2s ease-in-out'
-            console.log(isDropDown, '2')
+            // console.log(isDropDown, '2')
 
         if (!isDropDown.classList.contains('active')) {
             alert.style.paddingBottom = 'initial'
             alert.style.transition = '.2s ease-in-out'
         }
     } 
-    
     document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
         if (dropdown === isDropDown) return
         dropdown.classList.remove('active')
         alert.style.paddingBottom = 'initial'
         alert.style.transition = '.2s ease-in-out'
-            console.log('dropdown is removed 3')
-            console.log(dropdown, '3')
+            // console.log('dropdown is removed 3')
     })    
 })
 
-// const closeAlert = document.querySelector('.close-alert').addEventListener('click', e => {
-//     if (e.target.classList.contains('close-alert')) {
-//         alert.style.display = 'none'
-//     }
-// })
+const closeAlert = document.querySelector('.close-alert').addEventListener('click', e => {
+    if (e.target.classList.contains('close-alert')) {
+        alert.style.display = 'none'
+    }
+})
+
+//Turns off green notification signal when all messages are 'read'
+let inbox = [...document.querySelectorAll('.message-received')]
+for (let i = 0; i < inbox.length; i++) {
+    inbox[i].addEventListener('click', e => {
+        e.target.classList.add('read')
+        console.log(e.target, 'read class applied')
+
+        let readMessages = [...document.querySelectorAll('.read')]
+        if (readMessages.length === inbox.length) {
+            notificationSignal.style.display = 'none'
+        }
+    })
+}
+
+
+// WORKS BUT DOESN'T WORK//
+// let inbox = [...document.querySelectorAll('.message-received')]
+// for (let i = 0; i < inbox.length; i++) {
+//     inbox[i].addEventListener('click', e => {
+//         e.target.classList.add('read')
+//         console.log(e.target, 'read class applied')
+
+//         const checkClass = (message) => message.classList.contains('read')
+//         if (checkClass === true) {
+//             notificationSignal.style.display = 'none'
+//         }
+//         inbox.every(checkClass)
+//     })
+// }
 
 /*-----------------------------------------------------------------------------*/
 
@@ -65,11 +95,12 @@ document.addEventListener('click', e => {
 
 // Array.from: for each selection (label) 
 /* the position variable retrieves information about the size of the element selected and 
-   stores that information as its value
+   stores that information as its value - setting the size of the slider as much as there is space for the element.
 */
-// the left variable retrieves the x coordinate 
+// the left variable retrieves the x coordinate by using destructuring syntax - setting the slider in position
+// ... this makes it possible for the slider to go where the user clicks of it to go out of the four options.
 
-const options = document.querySelectorAll('.slider-label')
+const options = [...document.querySelectorAll('.slider-label')]
 const slider = document.querySelector('.slider')
 
 const sliderStyles = () => {
@@ -77,15 +108,15 @@ const sliderStyles = () => {
   slider.style.width = `${labelWidth}px`;
   slider.style.left = `${options[0].getBoundingClientRect().left}px`
   console.log('labelWidth:', labelWidth)
-  console.log( 'options:', options)
-  console.log(  'SliderWidth:', slider.style.width = `${labelWidth}px`)
-  console.log(  'SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
+  console.log('options:', options)
+  console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
+  console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
 }
 
 window.addEventListener('load', sliderStyles)
 window.addEventListener('resize', sliderStyles)
 
-Array.from(options).forEach(selection => {
+options.forEach(selection => {
   selection.addEventListener('click', (label) => {
     const position = selection.getBoundingClientRect()
     const { left } = position
@@ -222,64 +253,3 @@ const mobileOptions = {
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 /*------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*-------------------------- BELL CLICK EVENT -----------------------------------*/
-// const bell = document.querySelector('.notification-button')
-// const notificationSignal = document.querySelector('.notification-signal')
-// const dropDown = document.querySelector('.dropDown')
-// bell.addEventListener("click", () => {
-//     dropDown.insertAdjacentHTML('afterend',
-//         `<ul class="dropDown-menu active"> 
-//             <li class="message"><h3>Welcome</h3></li>
-//             <li class="message"><h3>Getting Started</h3></li>
-//         </ul>`
-//     )
-
-//     const dropDownMenu = document.querySelector('.dropDown-menu')
-//     notificationSignal.style.display = 'none';
-//     dropDown.style.position = 'relative'
-//     dropDown.style.border = '1px solid red'
-//     dropDown.style.position = 'absolute'
-//     dropDownMenu.style.left = '0'
-//     dropDownMenu.style.top = 'calc(100% + .25rem)'
-//     dropDownMenu.style.backgroundColor = '#fff'
-//     dropDownMenu.style.borderRadius = '.25rem'
-//     dropDownMenu.style.boxShadow = '0 2px 5px rgba(0, 0, 0, .1)'
-//     // dropDownMenu.style.opacity = '0'
-//     dropDownMenu.style.transition = 'opacity 150ms ease-in-out'
-//     // dropDownMenu.active.style.opacity = '1'    
-// })
-/*-----------------------------------------------------------------------------*/
-const bell = document.querySelector('.notification-button')
-const notificationSignal = document.querySelector('.notification-signal')

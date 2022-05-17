@@ -176,20 +176,18 @@ a[href$="link"] :hover {
 
 /* ===================== ALERT ===================== */
 .alert {
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
     border: 1px solid red;
 }
 
 .dropdown {
-    /* display: flex;
-    align-content: space-between; */
+    display: flex;
+    align-content: space-between;
+    flex-direction: row-reverse;
     position: relative;
     margin: 15px 0;
     border-radius: 25px;
     background: #7477bf;
-    padding: 10px 25px;
+    padding: 10px 24px;
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
@@ -210,11 +208,12 @@ a[href$="link"] :hover {
     transition: opacity .2s ease-in-out, transform .2s ease-in-out;
 }
 
-.dropdown-menu > li {
+/* .dropdown-menu > li {
     padding: 10px 15px;
-    /* border:1px solid white; */
-    /* border-radius: 20px; */
-}
+    border:1px solid white;
+    border-radius: 20px;
+} */
+
 
 .link {
     margin-right: auto;
@@ -234,10 +233,40 @@ a[href$="link"] :hover {
     opacity: 60%
 }
 
+.close-alert {
+    background: none;
+    border: none;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: .9em;
+    cursor: pointer;
+    padding: 0;
+    color: white;
+    transition: .17s ease-in;
+}
+
+.close-alert:hover {
+    color: red;
+}
+
 .dropdown.active > .link + .dropdown-menu {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+.message-received {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: .15s ease-in;
+    display: block;
+}
+
+.message-received:hover { 
+    opacity: 60%;
+    background-color: red;
+    /* pointer-events: auto; */
 }
 
 /* ================== SLIDER ==================  */
