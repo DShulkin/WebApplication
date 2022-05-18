@@ -1,4 +1,4 @@
-// /*------------------------------- ALERT ----------------------------------------*/
+/*------------------------------- ALERT ----------------------------------------*/
 const alert = document.querySelector('#alert-button')
 const bell = document.querySelector('.notification-button')
 const notificationSignal = document.querySelector('.notification-signal')
@@ -19,6 +19,7 @@ document.addEventListener('click', e => {
         if (!isDropDown.classList.contains('active')) {
             alert.style.paddingBottom = 'initial'
             alert.style.transition = '.2s ease-in-out'
+            // console.log('alert button was clicked while dropdown menu was open - sets the page back to its initial layout')
         }
     } 
     document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
@@ -33,44 +34,34 @@ document.addEventListener('click', e => {
 const closeAlert = document.querySelector('.close-alert').addEventListener('click', e => {
     if (e.target.classList.contains('close-alert')) {
         alert.style.display = 'none'
+        //console.log('alert was closed')
     }
 })
 
-//Turns off green notification signal when all messages are 'read'
-let inbox = [...document.querySelectorAll('.message-received')]
+let inbox = [...document.querySelectorAll('.message-received')];
 for (let i = 0; i < inbox.length; i++) {
-    inbox[i].addEventListener('click', e => {
-        e.target.classList.add('read')
-        console.log(e.target, 'read class applied')
+    inbox[i].addEventListener("click", (e) => {
+    e.target.classList.add('read')
+    // console.log(e.target, 'read class applied');
 
-        let readMessages = [...document.querySelectorAll('.read')]
-        if (readMessages.length === inbox.length) {
+        const checkClass = (message) => message.classList.contains('read')
+        if (inbox.every(checkClass)) {
             notificationSignal.style.display = 'none'
+            // console.log('all message have a class of 'read'')
         }
     })
 }
 
-
-// WORKS BUT DOESN'T WORK//
-// let inbox = [...document.querySelectorAll('.message-received')]
-// for (let i = 0; i < inbox.length; i++) {
-//     inbox[i].addEventListener('click', e => {
-//         e.target.classList.add('read')
-//         console.log(e.target, 'read class applied')
-
-//         const checkClass = (message) => message.classList.contains('read')
-//         if (checkClass === true) {
-//             notificationSignal.style.display = 'none'
-//         }
-//         inbox.every(checkClass)
-//     })
+// ALTERNATIVE CODE TO every() method ^^
+// let readMessages = [...document.querySelectorAll('.read')]
+// if (readMessages.length === inbox.length) {
+//     notificationSignal.style.display = 'none'
 // }
 
 /*-----------------------------------------------------------------------------*/
 
 
 /*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
-
 // the 'options 'variable selects all label elements 
 // the 'slider' variable selects the span element
 
@@ -92,7 +83,6 @@ for (let i = 0; i < inbox.length; i++) {
         size of an element and its position relative to the viewport.
 */
 
-
 // Array.from: for each selection (label) 
 /* the position variable retrieves information about the size of the element selected and 
    stores that information as its value - setting the size of the slider as much as there is space for the element.
@@ -107,10 +97,10 @@ const sliderStyles = () => {
   const labelWidth = options[0].clientWidth;
   slider.style.width = `${labelWidth}px`;
   slider.style.left = `${options[0].getBoundingClientRect().left}px`
-  console.log('labelWidth:', labelWidth)
-  console.log('options:', options)
-  console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
-  console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
+//   console.log('labelWidth:', labelWidth)
+//   console.log('options:', options)
+//   console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
+//   console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
 }
 
 window.addEventListener('load', sliderStyles)
@@ -130,7 +120,6 @@ options.forEach(selection => {
 
 
 /*------------------------ TRAFFIC CHART ---------------------------------*/
-
 const trafficCanvas = document.querySelector('#traffic-chart').getContext('2d')
 const trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
@@ -172,7 +161,6 @@ const trafficOptions = {
     }
 }
 
-
 const trafficChart = new Chart(trafficCanvas, trafficOptions)
 /*------------------------------------------------------------------------*/
 
@@ -210,11 +198,9 @@ const dailyOptions = {
 }
 
 const barChart = new Chart(dailyCanvas, dailyOptions)
-
 /*------------------------------------------------------------------------*/
 
 /*------------------------ MOBILE USERS ---------------------------------*/
-
 const mobileCanvas = document.querySelector('#doughnut-chart').getContext('2d')
 
 const mobileData = {
@@ -251,5 +237,4 @@ const mobileOptions = {
 }
 
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
-
 /*------------------------------------------------------------------------*/

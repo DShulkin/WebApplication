@@ -175,10 +175,6 @@ a[href$="link"] :hover {
 
 
 /* ===================== ALERT ===================== */
-.alert {
-    border: 1px solid red;
-}
-
 .dropdown {
     display: flex;
     align-content: space-between;
@@ -207,12 +203,6 @@ a[href$="link"] :hover {
     transform: translateY(-10px);
     transition: opacity .2s ease-in-out, transform .2s ease-in-out;
 }
-
-/* .dropdown-menu > li {
-    padding: 10px 15px;
-    border:1px solid white;
-    border-radius: 20px;
-} */
 
 
 .link {
@@ -266,7 +256,6 @@ a[href$="link"] :hover {
 .message-received:hover { 
     opacity: 60%;
     background-color: red;
-    /* pointer-events: auto; */
 }
 
 /* ================== SLIDER ==================  */
