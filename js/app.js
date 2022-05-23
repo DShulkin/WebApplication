@@ -1,7 +1,8 @@
 /*------------------------------- ALERT ----------------------------------------*/
 const alert = document.querySelector('#alert-button')
-const bell = document.querySelector('.notification-button')
+const bell = document.querySelector('.notifications')
 const notificationSignal = document.querySelector('.notification-signal')
+
 
 document.addEventListener('click', e => {
     const isDropDownButton = e.target.matches('[data-dropdown-button]')
@@ -58,8 +59,14 @@ for (let i = 0; i < inbox.length; i++) {
 //     notificationSignal.style.display = 'none'
 // }
 
-/*-----------------------------------------------------------------------------*/
+bell.addEventListener('click', e => {
+    if (alert.style.display = 'none') {
+        alert.style.display = 'block'
+        //console.log('the alert button appears')
+    }
+})
 
+/*-----------------------------------------------------------------------------*/
 
 /*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
 // the 'options 'variable selects all label elements 
@@ -83,12 +90,14 @@ for (let i = 0; i < inbox.length; i++) {
         size of an element and its position relative to the viewport.
 */
 
-// Array.from: for each selection (label) 
-/* the position variable retrieves information about the size of the element selected and 
-   stores that information as its value - setting the size of the slider as much as there is space for the element.
+/*  options array: for each selection (label) 
+    the position variable retrieves information about the size of the element selected and 
+    stores that information as its value - setting the size of the slider as much as there is space for the element.
 */
-// the left variable retrieves the x coordinate by using destructuring syntax - setting the slider in position
-// ... this makes it possible for the slider to go where the user clicks of it to go out of the four options.
+
+/*  the left variable retrieves the x coordinate by using destructuring syntax - setting the slider in position
+    this makes it possible for the slider to go where the user clicks of it to go out of the four options.
+*/
 
 const options = [...document.querySelectorAll('.slider-label')]
 const slider = document.querySelector('.slider')
