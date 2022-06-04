@@ -25,9 +25,9 @@ document.addEventListener('click', e => {
     } 
     document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
         if (dropdown === isDropDown) return
-        dropdown.classList.remove('active')
-        alert.style.paddingBottom = 'initial'
-        alert.style.transition = '.2s ease-in-out'
+            dropdown.classList.remove('active')
+            alert.style.paddingBottom = 'initial'
+            alert.style.transition = '.2s ease-in-out'
             // console.log('dropdown is removed 3')
     })    
 })
@@ -53,11 +53,13 @@ for (let i = 0; i < inbox.length; i++) {
     })
 }
 
+//===========================================================
 // ALTERNATIVE CODE TO every() method ^^
 // let readMessages = [...document.querySelectorAll('.read')]
 // if (readMessages.length === inbox.length) {
 //     notificationSignal.style.display = 'none'
 // }
+//===========================================================
 
 bell.addEventListener('click', e => {
     if (alert.style.display = 'none') {
