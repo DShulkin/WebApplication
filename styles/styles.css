@@ -430,9 +430,60 @@ canvas {
 
 
 /* ================== TOGGLE BUTTON ================== */
+.settings-label {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-left: 227px;
+    margin-bottom: 13px;
+    align-items: center;
+    top: 6.5px;
+}
 
+.settings-label input {
+    display: none;
+}
 
+.settings-label input:checked + .rounded-slider {
+    background: #7578c0;
+}
 
+.settings-label input:checked + .rounded-slider:after {
+    transform: translateX(30px);
+}
+
+.settings-label label p{
+    min-width: 175px;
+    color: #222;
+    margin-right: 112px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.rounded-slider {
+    position: absolute;
+    background: #ababab;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all .3s ease;
+}
+
+.rounded-slider:after {
+    position: absolute;
+    content: ' '; 
+    width: 28px;
+    height: 28px;
+    background:#fff;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: all .3s ease;
+}
 /* ================================================== */
 
 

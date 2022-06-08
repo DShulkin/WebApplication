@@ -75,8 +75,6 @@
         </div>
     </div>
         
-
-
     <!---- TRAFFIC NAVIGATION ---->
         <section class="traffic-container">
             <div class='traffic-header'>
@@ -108,7 +106,7 @@
     <section class="daily-traffic">
             <h3 class="sub-headline">Daily Traffic</h3>
             <div class="widget-container-full">
-                <canvas id='bar-chart' aria-label="Traffic Chart" role="img" ></canvas>
+                <canvas id='bar-chart' aria-label="Traffic Chart" role="img"></canvas>
             </div>
             <hr>
     </section>
@@ -257,18 +255,42 @@
     <section class="settings">
         <h3>Settings</h3>
 
-<!--SLIDER BUTTONS-->
-        <label class="switch" name="toggle">
+    <!--SLIDER BUTTONS-->
+    <div class="settings-label">
+        <input type="checkbox" id="email">
+        <div class="rounded-slider"></div>
+        <label class="settings-label" for="email" name="receive-email">
+        <p>Send Email Notifications</p>
+    </div>
+
+    <div class="settings-label">
+        <input type="checkbox" id="public-profile">
+        <div class="rounded-slider"></div>
+        <label class="settings-label" for="public-profile" name="public-profile">
+            <p>Set Profile To Public</p>
+        </label>
+    </div>
+
+
+
+    <!-- <div class="toggle-container">
+        <div class="checkbox-container">
             <span>Send Email Notifications</span>
-            <input type="checkbox">
-            <span class="toggle-round"></span>
-        </label>
-        
-        <label class="switch" name="toggle">
-            <span>Set Profile To Public</span>
-            <input type="checkbox">
-            <span class="toggle-round"></span>
-        </label>
+            <input type="checkbox" checked id="toggle" />
+            <label for="toggle"></label>
+            <div class="active-circle"></div>
+        </div>
+    </div>
+
+    <div class="checkbox-container">
+        <span>Set Profile To Public</span>
+        <input type="checkbox" checked id="toggle" />
+        <label for="toggle"></label>
+        <div class="active-circle"></div>
+    </div> -->
+
+
+
 <!--SLIDER BUTTONS-->
         
         <select class="form-field" id="timezone">
