@@ -219,13 +219,13 @@ const mobileData = {
     datasets: [{
         label: 'Mobile Users',
         data: [300, 100, 100],
-        background: '#7477BF',
         backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
             'rgb(255, 205, 86)'
           ],
-        borderWidth: 1,
+          borderWidth: 1,
+          hoverOffset: 4,
     }]
 }
 
