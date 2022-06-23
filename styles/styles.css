@@ -76,6 +76,26 @@ main {
     padding: 0;
 }
 
+
+/* .line-break {
+    display: block;
+    background: red;
+    height: 1px;
+    position: relative;
+    left: -22px;
+    margin-right: -38px;
+}  */
+
+
+.line-break {
+    display: block;
+    background: #cdcdcd;
+    height: 1px;
+    width: 113.2%;
+    transform: translateX(-22px);
+    margin-top: 15px;
+}
+
 .profile-photo, .member-photo {
     border-radius: 50%;
 }
@@ -185,6 +205,7 @@ a[href$="link"] :hover {
     transition: all 0.3s ease-out;
     cursor: pointer;
 }
+
 
 .dropdown-menu {
     width: 100%;
@@ -320,21 +341,35 @@ canvas {
       margin-bottom: 15px;
    }
 
+   .doughnut-chart-container canvas {
+    max-height: 230px;
+    
+   }
+
 
 /* ==================================================== */
 
 
 /* ================== SOCIAL STATUS ================== */
+
 .social-stats {
+    /* display: grid;;
+    column-gap: 20px;
+    row-gap: 20px; */
     padding-bottom: 10px;
 }
 
-.social {
+.social-container {
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.social-image {
     display: flex;
     height: 15vh;
     gap: 15px;
     padding: 20px;
-    margin: 20px 0;
     background-color: #f5f5f5;
     border: 2px solid#cdcdcd;
     border-radius: 10px;
@@ -357,10 +392,9 @@ canvas {
 .circle{fill:#767ABE;} 
 .icon-color{fill:#FFFFFF;}
 
-
 .social > svg {
     width: 75px;
-} 
+}  
 
 /*=========== NEW MEMBERS & RECENT ACTIVITY ===========*/
 .new-members > div:first-of-type,
@@ -445,6 +479,7 @@ canvas {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    /* margin-bottom: 40px */
 }
 
 .settings-label {
@@ -598,4 +633,38 @@ canvas {
         justify-content: center;
         flex-direction: row;
         gap: 50px;
+    }
+
+    .doughnut-chart-container canvas,
+    .bar-chart-container canvas {
+        max-height: 150px;
+        max-width: 300px;
+    }
+    
+    .line-break:nth-child(2) {
+        display: none;
+    }
+
+    .line-break {
+        width: 105.7%;;
+    }
+
+    .social-conainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .social-stats {
+        grid-template-columns: minmax(50px, 1fr) 1fr;
+        padding-bottom: 10px;
+    }
+    
+    
+    .social-stats h3 {
+        grid-column: 1/ span 2;
+    }
 }
+
+/* WORKING ON GRID FOR SOCIAL STATS */
+
+
+

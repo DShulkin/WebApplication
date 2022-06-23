@@ -224,7 +224,7 @@ const mobileData = {
             'rgb(54, 162, 235)',
             'rgb(255, 205, 86)'
           ],
-          borderWidth: 1,
+        //   borderWidth: 1,
           hoverOffset: 4,
     }]
 }
