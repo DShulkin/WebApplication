@@ -22,7 +22,7 @@
             <span class="notification-signal" id='notifications'></span>
         </div>
  
-        <span class='lineBreak heading-item'><!-- vertical line break--></span>
+        <span class='vertical-break heading-item'><!-- vertical line break--></span>
 
         <img class="profile-photo heading-item" src='images/member-1.jpg'>
         <h4 class='userName heading-item'>Student Name</h4>
@@ -95,24 +95,25 @@
                 </form>
               </div>
 
-         <!---- TRAFFIC CHART ---->
-        <div class="widget-container-full">
-            <canvas id="traffic-chart" aria-label="Traffic Chart" role="img"></canvas>
-        </div>
-        <!-- <hr> -->
-      </section>
-      <span class ="line-break"></span>
+
+        <!---- TRAFFIC CHART ---->
+            <div class="widget-container-full">
+                <canvas id="traffic-chart" aria-label="Traffic Chart" role="img"></canvas>
+            </div>
+            <!-- <hr> -->
+            </section>
+            <span class ="line-break"></span>
+
 
     <!---- DAILY TRAFFIC ---->
     <section class="daily-traffic-mobile-traffic">
-
         <div class="bar-chart-container">
         <h3>Daily Traffic</h3>
             <canvas id='bar-chart' aria-label="Traffic Chart" role="img"></canvas>
         </div>
         <!-- <hr> -->
         <span class="line-break"></span>
-        
+
 
     <!---- MOBILE USERS ---->
         <div class="doughnut-chart-container">
@@ -234,34 +235,43 @@
     <!---- RECENT ACTIVITY ---->
     <section class="comments">
         <h3>Recent Activity</h3>
+
         <div class='recent-activity'>
             <div class='members-container'>
                 <img src="images/member-1.jpg" class="member-photo" alt="member photo">
-                <p>Victoria Chambers commented on <b>WebApp's SEO TIPS</b></p>
-                <p>six minutes ago</p>
+                <div class="member-comment">
+                    <p>Victoria Chambers commented on <b>WebApp's SEO TIPS</b></p>
+                    <p>6 minutes ago</p>
+                </div>
             </div>
     
             <div class='members-container'>
                 <img src="images/member-2.jpg" class="member-photo" alt="member photo">
-                <p>Dayle Byrd liked <b>Facebook's changes for 2022</b></p>
-                <p>five hours ago</p>
+                <div class="member-comment">
+                    <p>Dayle Byrd liked <b>Facebook's changes for 2022</b></p>
+                    <p>five hours ago</p>
+                </div>
             </div>
     
             <div class='members-container'>
                 <img src="images/member-3.jpg" class="member-photo" alt="member photo">
-                <p>Dawn Wood commented on <b>Facebook's changes for 2022</b></p>
-                <p>1 day ago</p>
+                <div class="member-comment">
+                    <p>Dawn Wood commented on <b>Facebook's changes for 2022</b></p>
+                    <p>1 day ago</p>
+                </div>
             </div>
     
             <div class='members-container'>
                 <img src="images/member-4.jpg" class="member-photo" alt="member photo">
-                <p>Dan Oliver posted on <b>WebApp's SEO TIPS</b></p>
-                <p>1 day ago</p>
+                <div class="member-comment">
+                    <p>Dan Oliver posted on <b>WebApp's SEO TIPS</b></p>
+                    <p>1 day ago</p>
+                </div>
             </div>
         </div>
     </section>
     <!-- <hr> -->
-
+    <span class ="line-break"></span>
 
     <!---- MESSAGING WIDGET ---->
     <section class="messaging">

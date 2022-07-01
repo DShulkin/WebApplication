@@ -19,6 +19,7 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
     height: 100vh;
     width: 100vw;
     margin: 0 auto;
+    padding: 0;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -40,6 +41,7 @@ nav {
 main {
     grid-area: main;
     padding: 0 1em;
+    
 }
 
 /* =================================================== */
@@ -72,7 +74,7 @@ main {
     height:1.6em;
 }
 
-.lineBreak {
+.vertical-break {
     border-left: .5px solid white;
     height: 2.6em;
     padding: 0;
@@ -91,11 +93,12 @@ main {
 
 .line-break {
     display: block;
-    background: #cdcdcd;
+    background: red;
     height: 1px;
-    width: 113.2%;
-    transform: translateX(-22px);
     margin-top: 20px;
+    /* background: #cdcdcd; */
+    /* width: 113.2%; */
+    /* transform: translateX(-22px); */
 }
 
 .profile-photo {
@@ -416,7 +419,6 @@ canvas {
     margin-right: 5px;
 }
 
-
 .social-text :first-child {
     color: #7578c0;
     font-weight: 400;
@@ -510,13 +512,15 @@ canvas {
 
 
 
- .members-cc {
+ .members-cc,
+ .recent-activity {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.members-cc p {
+.members-cc p,
+.member-comment p {
     margin: 0;
 }
 
@@ -533,10 +537,12 @@ canvas {
     padding-bottom: 0;
 }
 
-.member-info {
+.member-info,
+.member-comment {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .member-info a {
@@ -729,12 +735,12 @@ canvas {
         row-gap: 25px;
         height: 100%;
         padding-top: 20px;
-        width: 65px;
+        /* width: 65px; */
     }
 
-    main {
+    /* main {
         padding-left: 32px;
-    }
+    } */
 
     .daily-traffic-mobile-traffic {
         justify-content: center;
@@ -749,12 +755,16 @@ canvas {
     }
     
     .line-break:nth-child(2) {
-        display: none;
+display: none;;
+
+        /* height: 200px;
+        width: 1px;
+        margin-left: 30px; */
     }
 
-    .line-break {
+    /* .line-break {
         width: 106%;
-    }
+    } */
 
     .social-cc {
         display: flex;
@@ -782,7 +792,8 @@ canvas {
         gap: 20px;
     }
     
-    .member-info {
+    .member-info,
+    .member-comment {
         align-items: flex-start;
         margin-right: auto;
     }
@@ -791,5 +802,5 @@ canvas {
 
 
 /* CURRENT PROBLEM
-    the span linebreaks width is causing left to right scrolling 
+   FIX LINE BREAKS!!
 */
