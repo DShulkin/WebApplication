@@ -82,9 +82,6 @@ main {
     background: red;
     height: 1px;
     margin-top: 20px;
-    /* background: #cdcdcd; */
-    /* width: 113.2%; */
-    /* transform: translateX(-22px); */
 }
 
 .profile-photo {
@@ -317,53 +314,12 @@ canvas {
   }
   
    .doughnut-chart-container canvas {
-    max-height: 230px;
+    max-height: 200px;
    }
-
 
 /* ==================================================== */
 
-
 /* ================== SOCIAL STATUS ================== */
-    /* display: grid;;
-    column-gap: 20px;
-    row-gap: 20px; */
-/* .social-stats {
-    padding-bottom: 10px;
-}
-
-.social-container {
-    display: grid;
-    row-gap: 20px;
-    column-gap: 20px;
-}
-
-.social-image {
-    display: flex;
-    height: 15vh;
-    gap: 15px;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border: 2px solid#cdcdcd;
-    border-radius: 10px;
-}
-
-.social-text :first-child {
-    color: #7578c0;
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.social-text :last-child {
-    color: #787878;
-    font-size: 3em;
-    margin: 0;
-} */
-
-
-
-
 .social-cc {
     display: flex;
     flex-direction: column;
@@ -447,7 +403,6 @@ canvas {
 .member-info a {
     text-decoration: none;
 }
-
 
 /* ================== MESSAGE USERS ================== */
 .message-container {
@@ -644,13 +599,12 @@ canvas {
     .mobile-traffic {
         flex: 1;
     }
-
+    
     .doughnut-chart-container canvas,
     .bar-chart-container canvas {
-        max-height: 150px;
-        max-width: 300px;
+        max-height: 180px;
+        max-width: 320px;
     }
-
 
     .social-cc {
         display: flex;
@@ -677,7 +631,9 @@ canvas {
         align-items: flex-start;
         margin-right: auto;
     }
+
     
+
 }
 
 
