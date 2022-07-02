@@ -38,11 +38,21 @@ nav {
     grid-area: navigation;
 }
 
-main {
+/* main {
     grid-area: main;
     padding: 0 1em;
     
-}
+} */
+
+main {
+    padding: 0;
+  } 
+  
+  section,
+  .main-header,
+  .alert {
+    margin: 0 1em;
+  }
 
 /* =================================================== */
 
@@ -323,7 +333,13 @@ a[href$="link"] :hover {
 
 /* ====================== CHARTS ======================  */
 
-.daily-traffic-mobile-traffic {
+.test {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* .daily-traffic {
     display: flex;
     flex-direction: column;
 }
@@ -331,26 +347,21 @@ a[href$="link"] :hover {
 .bar-chart-container,
 .doughnut-chart-container {
     flex: 1;
-}
-
-
-/* .mobile-users h3 {
-    margin-bottom: 0;
 } */
+
 
 canvas {
     max-width: 100%;
   }
   
-  #traffic-chart,
+  /* #traffic-chart,
   #bar-chart,
   #doughnut-chart {
       margin-bottom: 15px;
-   }
+   } */
 
    .doughnut-chart-container canvas {
     max-height: 230px;
-    
    }
 
 
@@ -753,17 +764,9 @@ canvas {
         max-height: 150px;
         max-width: 300px;
     }
-    
+/*     
     .line-break:nth-child(2) {
-display: none;;
-
-        /* height: 200px;
-        width: 1px;
-        margin-left: 30px; */
-    }
-
-    /* .line-break {
-        width: 106%;
+        display: none;
     } */
 
     .social-cc {
@@ -797,10 +800,15 @@ display: none;;
         align-items: flex-start;
         margin-right: auto;
     }
+    .test {
+        flex-direction: row;
+    }
+
+    .daily-traffic,
+    .mobile-traffic {
+        flex: 1;
+    }
     
 }
 
 
-/* CURRENT PROBLEM
-   FIX LINE BREAKS!!
-*/
