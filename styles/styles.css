@@ -5,13 +5,6 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
     font-weight:300;
 }
 
-/* hr {
-    margin: 0 -16px;
-    height: 1.5px;
-    background-color: rgb(236, 235, 238);
-    border: none;
-} */
-
 /* =================================================== */
 
 /* ================= GRID PROPERTIES ================= */
@@ -37,12 +30,6 @@ header {
 nav {
     grid-area: navigation;
 }
-
-/* main {
-    grid-area: main;
-    padding: 0 1em;
-    
-} */
 
 main {
     padding: 0;
@@ -90,17 +77,6 @@ main {
     padding: 0;
 }
 
-
-/* .line-break {
-    display: block;
-    background: red;
-    height: 1px;
-    position: relative;
-    left: -22px;
-    margin-right: -38px;
-}  */
-
-
 .line-break {
     display: block;
     background: red;
@@ -141,14 +117,11 @@ main {
 
 nav ul li  {
     width: 33px;
-    /* border-style: solid; 
-    border-color: red;  */
 }
 
 nav ul li:nth-child(2) {
-    width:30px;
+    width: 30px;
 }
-
 
 
 /* =================================================== */
@@ -290,7 +263,8 @@ a[href$="link"] :hover {
 
 .message-received:hover { 
     opacity: 60%;
-    background-color: red;
+    background-color: #4d4c72;
+    border-radius: 50px;
 }
 
 /* ================== TRAFFIC ==================  */
@@ -338,28 +312,10 @@ a[href$="link"] :hover {
     flex-direction: column;
 }
 
-
-/* .daily-traffic {
-    display: flex;
-    flex-direction: column;
-}
-
-.bar-chart-container,
-.doughnut-chart-container {
-    flex: 1;
-} */
-
-
 canvas {
     max-width: 100%;
   }
   
-  /* #traffic-chart,
-  #bar-chart,
-  #doughnut-chart {
-      margin-bottom: 15px;
-   } */
-
    .doughnut-chart-container canvas {
     max-height: 230px;
    }
@@ -421,13 +377,17 @@ canvas {
     border: 1.5px solid#cdcdcd;
     border-radius: 10px;
     flex: 1;
-    /* width: -webkit-fill-available; */
 }
 
 .social-image {
     min-width: 80px;
     padding: 10px;
     margin-right: 5px;
+}
+
+.social-text :first-child,
+.social-text :last-child {
+ margin: 0;
 }
 
 .social-text :first-child {
@@ -439,7 +399,7 @@ canvas {
 .social-text :last-child {
     color: #787878;
     font-weight: 300;
-    font-size: 28px;
+    font-size: 200%;
 } 
 
 /* SVG add ons */
@@ -451,78 +411,6 @@ canvas {
 }  
 
 /*=========== NEW MEMBERS & RECENT ACTIVITY ===========*/
-/* .new-members > div:first-of-type,
-.recent-activity > div:first-of-type {
-    padding-top: 0;
-}
-
-.new-members > div:last-child,
-.recent-activity > div:last-child {
-    border: none;
-} */
-
-
-
-/* .members-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid rgb(207, 205, 211);
-}
-
-.members-container p:first-of-type {
-    margin: -1px;
- }
-
-.members-container p:last-of-type {
-    margin: 2px;
-}
-
-.member-photo {
-    height: 5em;
-    margin-bottom: 5px;
-}
-
-.recent-activity p:nth-of-type(2)  {
-    margin: 0;  
-} */
-
-
-
-
-
-
-
-/* .members-cc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.members-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    border-bottom: 1px solid rgb(207, 205, 211);
-}
-
-.members-container p:first-of-type,
-.members-container p:last-of-type {
-    margin:0;
- }
-
- .members-container p:last-of-type {
-    padding-bottom: 20px;
- } */
-
-
-
-
  .members-cc,
  .recent-activity {
     display: flex;
@@ -746,17 +634,15 @@ canvas {
         row-gap: 25px;
         height: 100%;
         padding-top: 20px;
-        /* width: 65px; */
     }
 
-    /* main {
-        padding-left: 32px;
-    } */
-
-    .daily-traffic-mobile-traffic {
-        justify-content: center;
+    .test {
         flex-direction: row;
-        gap: 50px;
+    }
+
+    .daily-traffic,
+    .mobile-traffic {
+        flex: 1;
     }
 
     .doughnut-chart-container canvas,
@@ -764,10 +650,7 @@ canvas {
         max-height: 150px;
         max-width: 300px;
     }
-/*     
-    .line-break:nth-child(2) {
-        display: none;
-    } */
+
 
     .social-cc {
         display: flex;
@@ -784,12 +667,6 @@ canvas {
         font-size: 1.1em;
     }
 
-    .social-text :last-child {
-        color: #787878;
-        font-weight: 300;
-        font-size: 200%;
-    }
-
     .members-container {
         flex-direction: row;
         gap: 20px;
@@ -799,14 +676,6 @@ canvas {
     .member-comment {
         align-items: flex-start;
         margin-right: auto;
-    }
-    .test {
-        flex-direction: row;
-    }
-
-    .daily-traffic,
-    .mobile-traffic {
-        flex: 1;
     }
     
 }
