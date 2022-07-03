@@ -304,18 +304,16 @@ a[href$="link"] :hover {
 
 /* ====================== CHARTS ======================  */
 
-.test {
+.half-widget {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 canvas {
     max-width: 100%;
   }
   
-   .doughnut-chart-container canvas {
-    max-height: 200px;
-   }
 
 /* ==================================================== */
 
@@ -591,20 +589,20 @@ canvas {
         padding-top: 20px;
     }
 
-    .test {
+    /* .test {
         flex-direction: row;
-    }
+    }  */
 
-    .daily-traffic,
+    /* .daily-traffic,
     .mobile-traffic {
         flex: 1;
-    }
+    } */
     
-    .doughnut-chart-container canvas,
+    /* .doughnut-chart-container canvas,
     .bar-chart-container canvas {
         max-height: 180px;
         max-width: 320px;
-    }
+    } */
 
     .social-cc {
         display: flex;
@@ -631,6 +629,34 @@ canvas {
         align-items: flex-start;
         margin-right: auto;
     }
+
+    /* .test {
+        flex-direction: row;
+        justify-items: center;
+        gap: 20px;
+    }
+
+    .chart-box {
+    width:40vw;
+    } */
+    
+
+    .half-widget {
+        flex-direction: row;
+        justify-items: center;
+        gap: 10px;
+    }
+    
+    .daily-traffic,
+    .mobile-traffic {
+        width: 50%;
+    }
+
+    /* .daily-traffic canvas,
+    .mobile-traffic canvas {
+        max-width: 400px;
+        max-height: 230px;;
+    } */
 
     
 
