@@ -314,7 +314,6 @@ canvas {
     max-width: 100%;
   }
   
-
 /* ==================================================== */
 
 /* ================== SOCIAL STATUS ================== */
@@ -589,20 +588,15 @@ canvas {
         padding-top: 20px;
     }
 
-    /* .test {
+    .half-widget {
         flex-direction: row;
-    }  */
-
-    /* .daily-traffic,
-    .mobile-traffic {
-        flex: 1;
-    } */
+        justify-items: center;
+    }
     
-    /* .doughnut-chart-container canvas,
-    .bar-chart-container canvas {
-        max-height: 180px;
-        max-width: 320px;
-    } */
+    .daily-traffic,
+    .mobile-traffic {
+        width: 50%;
+    }
 
     .social-cc {
         display: flex;
@@ -629,37 +623,6 @@ canvas {
         align-items: flex-start;
         margin-right: auto;
     }
-
-    /* .test {
-        flex-direction: row;
-        justify-items: center;
-        gap: 20px;
-    }
-
-    .chart-box {
-    width:40vw;
-    } */
     
-
-    .half-widget {
-        flex-direction: row;
-        justify-items: center;
-        gap: 10px;
-    }
-    
-    .daily-traffic,
-    .mobile-traffic {
-        width: 50%;
-    }
-
-    /* .daily-traffic canvas,
-    .mobile-traffic canvas {
-        max-width: 400px;
-        max-height: 230px;;
-    } */
-
-    
-
 }
-
 

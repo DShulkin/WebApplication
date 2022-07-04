@@ -194,6 +194,7 @@ const dailyOptions = {
     type: 'bar',
     data: dailyData,
     options: {
+        aspectRatio: 1.9,
         responsive: true,
         scales: {
             y: {
@@ -232,8 +233,8 @@ const mobileData = {
 const mobileOptions = {
     type: 'doughnut',
     data: mobileData,
-    aspectRatio: 1.9,
     options: {
+        aspectRatio: 1.9,
         responsive: true,
         plugins: {
             legend: {
