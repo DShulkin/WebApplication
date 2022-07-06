@@ -77,9 +77,13 @@ main {
     padding: 0;
 }
 
+.vertical-break:nth-of-type(2) {
+    display: none;;
+}
+
 .line-break {
     display: block;
-    background: red;
+    background: #e5e5e5;;
     height: 1px;
     margin-top: 20px;
 }
@@ -365,7 +369,7 @@ canvas {
 
 /*=========== NEW MEMBERS & RECENT ACTIVITY ===========*/
  .members-cc,
- .recent-activity {
+ .activity-cc {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -569,10 +573,10 @@ canvas {
     background-color:#ababab;
     color: white;
  }
- 
 /* ================================================== */
 
 
+/* ====================== TABLET ==================== */
 @media screen and (min-width: 768px) {
     .grid-container {
         grid-template-columns: 55px 1fr;
@@ -592,6 +596,17 @@ canvas {
         flex-direction: row;
         justify-items: center;
     }
+
+    .vertical-break:nth-of-type(2) {
+        display: block;
+        border-left: 1px solid #e5e5e5;
+        height: 20em;
+    }
+
+    main .line-break:nth-of-type(2) {
+        margin-top: 0;
+        
+    }
     
     .daily-traffic,
     .mobile-traffic {
@@ -608,8 +623,6 @@ canvas {
     }
 
     .social-text :first-child {
-        color: #7578c0;
-        font-weight: 400;
         font-size: 1.1em;
     }
 
@@ -624,5 +637,10 @@ canvas {
         margin-right: auto;
     }
     
+}
+
+/* ====================== DESKTOP ==================== */
+@media screen and (min-width: 1024) { 
+
 }
 
