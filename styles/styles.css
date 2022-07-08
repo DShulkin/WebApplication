@@ -9,10 +9,10 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
 
 /* ================= GRID PROPERTIES ================= */
 .grid-container {
-    height: 100vh;
+    /* height: 100vh;
     width: 100vw;
     margin: 0 auto;
-    padding: 0;
+    padding: 0; */
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -23,52 +23,72 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
 
 header {
     grid-area: header;
-    padding: 0 1em;
-    background: #7477bf;
-    color:#fff;
+
 }
+
 nav {
     grid-area: navigation;
 }
 
-main {
-    padding: 0;
-  } 
-  
-  section,
-  .main-header,
-  .alert {
-    margin: 0 1em;
-  }
 
 /* =================================================== */
 
 /* ===================== HEADER ===================== */
-.heading {
-    display: flex;
+
+header {    
+
+    display: grid;
+    grid-template-columns: 1fr 40px 10px 50px 85px;
+    grid-template-rows: 65px;
+    justify-content: center;
     align-items: center;
-    justify-content: center; 
-    height: 60px;
-    /* GRID ALTERNATIVE */
+    padding: 0 1em;
+    background: #7477bf;
+    color: #fff;
+
+        /* grid-template-columns: 1fr 35px 5px 50px 85px; */
+    /* margin-right: 0; */
+
     /* display: grid;
-    justify-content: space-around;
-    place-items: center;
-    grid-template-columns: 1fr auto auto auto auto;
-    column-gap: 6px;  */
+    grid-template-columns: 1fr 35px 0px 40px 85px;
+    grid-template-rows: 60px;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px; */
+    
+    /* display: flex;
+    align-items: center; 
+    gap: 10px;
+    height: 60px; */
+    /* margin-right: 0; */
+    /* padding: 0 1em;
+    background: #7477bf;
+    color:#fff;*/
+} 
+
+header > h1 {
+    /* margin-right: auto; */
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-.heading-item {
-    margin: 0 4px;
-}
-
-.heading > h1 {
-    margin-right: auto;
-    font-size: 1.5em;
+section,
+.main-header,
+.alert,
+.traffic-container,
+.daily,
+.mobile,
+.social-stats,
+.new-members,
+.activity,
+.settings {
+    margin: 0 1em;
 }
 
 .notifications {
     display: flex;
-    height:1.6em;
+    height: 1.5em;
 }
 
 .vertical-break {
@@ -78,7 +98,7 @@ main {
 }
 
 .vertical-break:nth-of-type(2) {
-    display: none;;
+    display: none;
 }
 
 .line-break {
@@ -89,7 +109,7 @@ main {
 }
 
 .profile-photo {
-    height: 3em;
+    height: 2.5em;
     border-radius: 50%;
 }
 
@@ -102,7 +122,6 @@ main {
     min-width: max-content;
     font-size: .85em;
 }
-
 /* ====================================================== */
 
 
@@ -129,15 +148,18 @@ nav ul li:nth-child(2) {
 .main-header {
     display: grid;
     grid-template-columns: auto 1fr;
+    margin-right: 0;
+}
+
+.main-header h2 {
+    margin-right: 16px;
 }
 
 .tab {
-    height: 67px;
+    height: 65px;
     background-color: rgb(236, 235, 238);
     border-bottom: 1px solid rgb(207, 205, 211);
     border-left: 1px solid rgb(207, 205, 211);
-    right: -16px;
-    position: relative;
 }
 
 .notification-button {
@@ -583,6 +605,11 @@ canvas {
         grid-template-areas: 'header header'
                              'navigation main' ;
     }
+    main { 
+       display: grid;
+        grid-template-columns: 50% ;
+        grid-template-areas: 
+    }
 
     .navigation {
         flex-direction: column;
@@ -592,26 +619,34 @@ canvas {
         padding-top: 20px;
     }
 
-    .half-widget {
+    /* .daily {
+        grid-row: 0 / span 1;
+    }
+
+    .mobile {
+        grid-row: 1 / span 2;
+    } */
+
+    /* .half-widget {
         flex-direction: row;
         justify-items: center;
-    }
+    } */
 
-    .vertical-break:nth-of-type(2) {
+    /* .vertical-break:nth-of-type(2) {
         display: block;
-        border-left: 1px solid #e5e5e5;
-        height: 20em;
-    }
+        height: 33vw;
+        border-right: 1px solid #e5e5e5;
+    } */
 
-    main .line-break:nth-of-type(2) {
+    /* main .line-break:nth-of-type(2) {
         margin-top: 0;
-        
-    }
+
+    } */
     
-    .daily-traffic,
+    /* .daily-traffic,
     .mobile-traffic {
         width: 50%;
-    }
+    } */
 
     .social-cc {
         display: flex;
@@ -640,7 +675,7 @@ canvas {
 }
 
 /* ====================== DESKTOP ==================== */
-@media screen and (min-width: 1024) { 
+@media screen and (min-width: 1024px) { 
 
 }
 
