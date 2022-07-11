@@ -13,6 +13,7 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
     width: 100vw;
     margin: 0 auto;
     padding: 0; */
+    height: 100vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -38,43 +39,24 @@ nav {
 header {    
 
     display: grid;
-    grid-template-columns: 1fr 40px 10px 50px 85px;
+    grid-template-columns: 1fr 35px 10px 50px 85px;
     grid-template-rows: 65px;
     justify-content: center;
     align-items: center;
     padding: 0 1em;
     background: #7477bf;
     color: #fff;
-
-        /* grid-template-columns: 1fr 35px 5px 50px 85px; */
-    /* margin-right: 0; */
-
-    /* display: grid;
-    grid-template-columns: 1fr 35px 0px 40px 85px;
-    grid-template-rows: 60px;
-    justify-content: center;
-    align-items: center;
-    grid-gap: 10px; */
-    
-    /* display: flex;
-    align-items: center; 
-    gap: 10px;
-    height: 60px; */
-    /* margin-right: 0; */
-    /* padding: 0 1em;
-    background: #7477bf;
-    color:#fff;*/
 } 
 
 header > h1 {
     /* margin-right: auto; */
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 section,
-.main-header,
+/* .main-header, */
 .alert,
 .traffic-container,
 .daily,
@@ -83,12 +65,36 @@ section,
 .new-members,
 .activity,
 .settings {
-    margin: 0 1em;
+    padding: 0 1em;
 }
+
+.traffic-container,
+.daily,
+.mobile,
+.social-stats,
+.new-members,
+.activity,
+.messaging {
+    border-bottom: 1px solid red;
+    padding-bottom: 16px;
+}
+
+
+/* section::after {
+    content: '';
+    position: absolute;
+    margin: auto;
+    right: 0px;
+    bottom: 90px;
+    left: 55px;
+    height: 1px;
+    background-color: red;
+} */
 
 .notifications {
     display: flex;
     height: 1.5em;
+    width: fit-content;
 }
 
 .vertical-break {
@@ -148,7 +154,7 @@ nav ul li:nth-child(2) {
 .main-header {
     display: grid;
     grid-template-columns: auto 1fr;
-    margin-right: 0;
+    margin-left: 16px;
 }
 
 .main-header h2 {
@@ -163,7 +169,8 @@ nav ul li:nth-child(2) {
 }
 
 .notification-button {
-    width: 35px;
+    width: 25px;
+    padding: 0;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -178,7 +185,6 @@ a[href$="link"] :hover {
     background: rgb(157, 255, 82);
     position: absolute;
     z-index: 2;
-    margin-left: 6px;
     border-radius: 50%;
     height: 10px;
     width: 10px;
@@ -415,6 +421,10 @@ canvas {
     padding-bottom: 0;
 }
 
+.members-container > span {
+    display: none;
+}
+
 .member-info,
 .member-comment {
     display: flex;
@@ -605,11 +615,6 @@ canvas {
         grid-template-areas: 'header header'
                              'navigation main' ;
     }
-    main { 
-       display: grid;
-        grid-template-columns: 50% ;
-        grid-template-areas: 
-    }
 
     .navigation {
         flex-direction: column;
@@ -619,33 +624,28 @@ canvas {
         padding-top: 20px;
     }
 
-    /* .daily {
-        grid-row: 0 / span 1;
+    main { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-header,
+    .alert,
+    .traffic-container,
+    .social-stats,
+    .new-members,
+    .activity,
+    .messaging,
+    .settings {
+        grid-column: 1 / span 2;
+    }
+
+    /* .dailym{
+        grid-column: 1/ span 1;
     }
 
     .mobile {
-        grid-row: 1 / span 2;
-    } */
-
-    /* .half-widget {
-        flex-direction: row;
-        justify-items: center;
-    } */
-
-    /* .vertical-break:nth-of-type(2) {
-        display: block;
-        height: 33vw;
-        border-right: 1px solid #e5e5e5;
-    } */
-
-    /* main .line-break:nth-of-type(2) {
-        margin-top: 0;
-
-    } */
-    
-    /* .daily-traffic,
-    .mobile-traffic {
-        width: 50%;
+        grid-column: 2/ span 3;
     } */
 
     .social-cc {
@@ -665,17 +665,45 @@ canvas {
         flex-direction: row;
         gap: 20px;
     }
+
+    .members-container > span {
+        display: block;
+        font-size: 18px;
+        color: #7477bf;
+    }
     
     .member-info,
     .member-comment {
         align-items: flex-start;
         margin-right: auto;
+        text-align: initial;
     }
     
 }
 
 /* ====================== DESKTOP ==================== */
 @media screen and (min-width: 1024px) { 
+
+    .new-members,
+    .messaging {
+        grid-column: 1/ span 1;
+    }
+    
+    .messaging {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .activity,
+    .settings {
+        grid-column: 2/ span 1;
+    }
+
+    .settings {
+        display: grid;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+    }
+    
 
 }
 
