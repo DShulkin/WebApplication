@@ -305,42 +305,46 @@
     <!-- <span class ="line-break"></span> -->
     
 
-    <!-- LOCAL SETTINGS -->
+    <!-- SETTINGS -->
     <section class="settings">
         <h3>Settings</h3>
         
     <!--SLIDER BUTTONS-->
-    <div class="settings-label">
-        <input type="checkbox" id="email">
-        <div class="rounded-slider"></div>
-        <label class="settings-label" for="email" name="receive-email">
-        <p>Send Email Notifications</p>
-    </div>
 
-    <div class="settings-label">
-        <input type="checkbox" id="public-profile">
-        <div class="rounded-slider"></div>
-        <label class="settings-label" for="public-profile" name="public-profile">
-            <p>Set Profile To Public</p>
-        </label>
-    </div>
+        <form class="test">
+            <div class="settings-label">
+                <input type="checkbox" id="email">
+                <div class="rounded-slider"></div>
+                <label class="settings-label" for="email" name="receive-email">
+                    <p>Send Email Notifications</p>
+                </label>
+            </div>
+        
+            <div class="settings-label">
+                <input type="checkbox" id="public-profile">
+                <div class="rounded-slider"></div>
+                <label class="settings-label" for="public-profile" name="public-profile">
+                    <p>Set Profile To Public</p>
+                </label>
+            </div>
 
-<!--SLIDER BUTTONS-->
-    <div class="timezone">
-        <select>
-            <option disabled selected>Select a Timezone</option>
-            <option>Atlantic Standard</option>
-            <option>Eastern Standard</option>
-            <option>Central Standard</option>
-            <option>Mountain Standard</option>
-        </select>
-        <div class="arrow"></div>
-    </div>
+    <!--SLIDER BUTTONS-->
+            <div class="timezone">
+                <select>
+                    <option disabled selected>Select a Timezone</option>
+                    <option>Atlantic Standard</option>
+                    <option>Eastern Standard</option>
+                    <option>Central Standard</option>
+                    <option>Mountain Standard</option>
+                </select>
+                <div class="arrow"></div>
+            </div>
 
-        <div class="settings-buttons">
-            <button id="save">Save</button>
-            <button id="cancel">Cancel</button>
-        </div>
+            <div class="settings-buttons">
+                <button id="save">Save</button>
+                <button id="cancel">Cancel</button>
+            </div>
+        </form>
     </section>
 </main>
 

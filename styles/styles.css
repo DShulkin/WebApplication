@@ -487,13 +487,13 @@ canvas {
 .settings-label {
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
     position: relative;
     width: 60px;
     height: 30px;
     margin-left: 227px;
-    margin-bottom: 13px;
-    align-items: center;
-    top: 6.5px;
+    /* margin-bottom: 13px; */
+    /* top: 6.5px; */
 }
 
 .settings-label input {
@@ -586,25 +586,25 @@ canvas {
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+    font-size: 14px;
 }
 
 .settings-buttons > button {
-    padding: 10px 40px;
+    flex: 1;
+    color: white;
+    padding: 10px;
     border: none;
     border-radius: 5px;
 }
 
 .settings-buttons :nth-child(1) {
-   flex: 1;
    background-color: #7578c0;
-   color: white
 }
 
 .settings-buttons :nth-child(2) {
-    flex: 1;
     background-color:#ababab;
-    color: white;
  }
+ 
 /* ================================================== */
 
 
@@ -699,10 +699,10 @@ canvas {
         grid-column: 2/ span 1;
     }
 
-    .settings {
+    /* .settings {
         display: grid;
         grid-template-rows: 1fr 1fr 2fr 1fr;
-    }
+    } */
     
 
 }
