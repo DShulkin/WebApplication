@@ -6,6 +6,7 @@
     <title>WebApp</title> 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/toggle-switch.css">
 </head>
 
 <body class="grid-container"> 
@@ -298,7 +299,7 @@
         <h3>Message Users</h3>
         <form class="message-container">
             <input type="text" placeholder="Search for user" class="form-field" id="user-field">
-            <textarea placeholder="Message to user" id="messageField" cols="30" rows="10"></textarea>
+            <textarea placeholder="Message to user" id="messageField" cols="30" rows="6"></textarea>
             <button id="send">Send</button>
         </form>
     </section>
@@ -306,17 +307,63 @@
     
 
     <!-- SETTINGS -->
-    <section class="settings">
-        <h3>Settings</h3>
-        
-    <!--SLIDER BUTTONS-->
 
-        <form class="test">
+    <section class="settings">
+        <h3>Settings</h3>             
+        
+        <!-- <div class="settings-cc"> -->
+            
+            <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+                <strong>
+                    Send Email Notifications
+                </strong>
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+
+              <label class="switch-light switch-ios" onclick="">
+                <input type="checkbox">
+                <strong>
+                    Set To Public
+                </strong>
+                <span>
+                  <span>Off</span>
+                  <span>On</span>
+                  <a></a>
+                </span>
+              </label>
+
+            <select class="form-field" id="timezone">
+                <option disabled selected>Select a Timezone</option>
+                <option>Atlantic Standard</option>
+                <option>Eastern Standard</option>
+                <option>Central Standard</option>
+                <option>Mountain Standard</option>
+            </select>
+            <!-- <div class="arrow"></div> -->
+
+            <div class="settings-buttons">
+                <button id="save">Save</button>
+                <button id="cancel">Cancel</button>
+            </div>
+
+        <!-- </div> -->
+
+    </section>
+
+    <!-- <section class="settings">
+        <h3>Settings</h3> -->
+    <!--SLIDER BUTTONS-->
+        <!-- <form class="test">
             <div class="settings-label">
                 <input type="checkbox" id="email">
                 <div class="rounded-slider"></div>
                 <label class="settings-label" for="email" name="receive-email">
-                    <p>Send Email Notifications</p>
+                    Send Email Notifications
                 </label>
             </div>
         
@@ -324,12 +371,11 @@
                 <input type="checkbox" id="public-profile">
                 <div class="rounded-slider"></div>
                 <label class="settings-label" for="public-profile" name="public-profile">
-                    <p>Set Profile To Public</p>
+                    Set Profile To Public
                 </label>
-            </div>
-
+            </div> -->
     <!--SLIDER BUTTONS-->
-            <div class="timezone">
+            <!-- <div class="timezone">
                 <select>
                     <option disabled selected>Select a Timezone</option>
                     <option>Atlantic Standard</option>
@@ -345,7 +391,8 @@
                 <button id="cancel">Cancel</button>
             </div>
         </form>
-    </section>
+    </section> -->
+    
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
