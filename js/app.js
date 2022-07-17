@@ -101,31 +101,35 @@ bell.addEventListener('click', e => {
     this makes it possible for the slider to go where the user clicks of it to go out of the four options.
 */
 
-const options = [...document.querySelectorAll('.slider-label')]
-const slider = document.querySelector('.slider')
+// const options = [...document.querySelectorAll('.slider-label')]
+// const slider = document.querySelector('.slider')
 
-const sliderStyles = () => {
-  const labelWidth = options[0].clientWidth;
-  slider.style.width = `${labelWidth}px`;
-  slider.style.left = `${options[0].getBoundingClientRect().left}px`
+// const sliderStyles = () => {
+//   const labelWidth = options[0].clientWidth;
+//   slider.style.width = `${labelWidth}px`;
+//   slider.style.left = `${options[0].getBoundingClientRect().left}px`
+
 //   console.log('labelWidth:', labelWidth)
 //   console.log('options:', options)
 //   console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
 //   console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
-}
 
-window.addEventListener('load', sliderStyles)
-window.addEventListener('resize', sliderStyles)
+// }
 
-options.forEach(selection => {
-  selection.addEventListener('click', (label) => {
-    const position = selection.getBoundingClientRect()
-    const { left } = position
-    slider.style.left = left + 'px'
+// window.addEventListener('load', sliderStyles)
+// window.addEventListener('resize', sliderStyles)
+
+// options.forEach(selection => {
+//   selection.addEventListener('click', (label) => {
+//     const position = selection.getBoundingClientRect()
+//     const { left } = position
+
+//     slider.style.left = left + 'px'
     // console.log('position:',position)
     // console.log('left:',left)
-  })
-})
+
+//   })
+// })
 
 /*------------------------------------------------------------------------*/
 
