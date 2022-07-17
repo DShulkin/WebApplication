@@ -561,10 +561,10 @@ canvas {
 /* ================================================== */
 
 /* ================== SETTINGS TIMEZONE ================== */
-
+/* 45px 45px 70px 44px 36px 0px */
 .settings {
     display: grid;
-    grid-template-rows: 45px 45px 70px 44px 36px 0px;
+    grid-template-rows: 44px 41px 74px 44px 37px;
     grid-gap: 15px;
 }
 
@@ -702,7 +702,7 @@ canvas {
         grid-column: 1 / span 2;
     } */
 
-    /* .dailym{
+    /* .daily{
         grid-column: 1/ span 1;
     }
 
