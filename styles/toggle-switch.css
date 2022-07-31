@@ -178,6 +178,9 @@
       z-index: 1;
       width: 10px;
       height: 100%; }
+      .switch-toggle label > * {
+        outline: none;
+      }
     .switch-toggle label:nth-child(2):nth-last-child(4),
     .switch-toggle label:nth-child(2):nth-last-child(4) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(4) ~ a {
@@ -195,7 +198,8 @@
     .switch-toggle label:nth-child(2):nth-last-child(8),
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ label,
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ a {
-      width: 25%; }
+      width: 25%;
+    outline: none; }
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(3) + label ~ a {
       left: 25%; }
     .switch-toggle label:nth-child(2):nth-last-child(8) ~ input:checked:nth-child(5) + label ~ a {
@@ -305,22 +309,22 @@
   .switch-ios.switch-light input:checked ~ span span:last-of-type {
     opacity: 1;
     color: #fff; }
-  .switch-ios.switch-toggle {
+  /* .switch-ios.switch-toggle {
     background-color: #D8D9DB;
     border-radius: 30px;
-    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0; }
+    box-shadow: inset rgba(0, 0, 0, 0.1) 0 1px 0; } */
     .switch-ios.switch-toggle a {
       background-color: #4BD865;
-      border: 0.125em solid #D8D9DB;
+      /* border: 0.125em solid #D8D9DB; */
       border-radius: 1.75em;
       transition: all 0.12s ease-out; }
     .switch-ios.switch-toggle label {
-      height: 2.4em;
+      /* height: 2.4em; */
       color: #888b92;
       line-height: 2.4em;
       vertical-align: middle; }
   .switch-ios input:checked + label {
-    color: #3e4043; }
+    color: white; }
   /* Holo Theme
  */
   .switch-toggle.switch-holo,

@@ -70,77 +70,24 @@ bell.addEventListener('click', e => {
 
 /*-----------------------------------------------------------------------------*/
 
-/*------------------------ TRAFFIC NAVIGATION ---------------------------------*/
-// the 'options 'variable selects all label elements 
-// the 'slider' variable selects the span element
-
-/*  sliderStyles function: 
-    the 'labelWidth' variable - retrieves the width of the label element and sets 
-    that number as its value.
-    --- NOTE: it doesn't matter what index value of the four
-        labels are chosen because it is setting the same size for each of them. 
-        this variable stores the width as its value ---
-
-// the second line of css converts the value of 'labelWidth' into pixels - 
-   setting the width of the slider.
-
-// the index value of options is set to 0 so the the first label is highlighted/selected.
-   it is value positioned left is based on the value of its offsetLeft property 
-
-        NOTE:
-        element.getBoundingClientRect method returns a DOMRec object providing information about the 
-        size of an element and its position relative to the viewport.
-*/
-
-/*  options array: for each selection (label) 
-    the position variable retrieves information about the size of the element selected and 
-    stores that information as its value - setting the size of the slider as much as there is space for the element.
-*/
-
-/*  the left variable retrieves the x coordinate by using destructuring syntax - setting the slider in position
-    this makes it possible for the slider to go where the user clicks of it to go out of the four options.
-*/
-
-// const options = [...document.querySelectorAll('.slider-label')]
-// const slider = document.querySelector('.slider')
-
-// const sliderStyles = () => {
-//   const labelWidth = options[0].clientWidth;
-//   slider.style.width = `${labelWidth}px`;
-//   slider.style.left = `${options[0].getBoundingClientRect().left}px`
-
-//   console.log('labelWidth:', labelWidth)
-//   console.log('options:', options)
-//   console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
-//   console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
-
-// }
-
-// window.addEventListener('load', sliderStyles)
-// window.addEventListener('resize', sliderStyles)
-
-// options.forEach(selection => {
-//   selection.addEventListener('click', (label) => {
-//     const position = selection.getBoundingClientRect()
-//     const { left } = position
-
-//     slider.style.left = left + 'px'
-    // console.log('position:',position)
-    // console.log('left:',left)
-
-//   })
-// })
-
-/*------------------------------------------------------------------------*/
-
 
 /*------------------------ TRAFFIC CHART ---------------------------------*/
+const labels = document.querySelectorAll('.traffic-nav label') //NODE LIST 
+// const labels = [...document.querySelectorAll('.traffic-nav label')] //ARRAY LIST
+
+const dataArray = [   
+    [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+    [300, 500, 2500, 1050, 1850, 1500, 750, 2250, 1250, 2000, 2500],     
+    [1000, 300, 500, 950, 1150, 1300, 1400, 2000, 2500, 700, 2000],
+    [1500, 700, 1050, 950, 1200, 2500, 750, 850, 1050, 900, 300]
+]
+
 const trafficCanvas = document.querySelector('#traffic-chart').getContext('2d')
 const trafficData = {
     labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
     datasets: [{
         label:'Traffic',
-        data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+        data: dataArray[0],
         fill: true,
         aspectRatio: 2.5,
         backgroundColor: 'rgba(116, 119, 191, .3)',
@@ -158,7 +105,7 @@ const trafficData = {
     }] 
 };
 
-const trafficOptions = {
+const trafficOption = {
     type: 'line',
     data: trafficData,
     options: {
@@ -176,7 +123,29 @@ const trafficOptions = {
     }
 }
 
-const trafficChart = new Chart(trafficCanvas, trafficOptions)
+for (let i = 0; i < labels.length; i++) {
+    labels[i].addEventListener('click', () => {
+        // console.log(labels[i], 'this label was clicked')
+        if (labels[i] === labels[i]) {
+            trafficChart.data.datasets[0].data = dataArray[i];
+            console.log(dataArray[i])
+            console.log(labels[i] === labels[i])
+
+        }
+        trafficChart.update()
+    })
+}
+
+let trafficChart = new Chart(trafficCanvas, trafficOption)
+
+// const chart = document.querySelector('#traffic-chart')
+
+// const updateChart = (chart, newData => {
+//     chart.data.labels = newData.labels
+//     chart.data.datasets[0].data = newData.datasets[0].data
+//     chart.update()
+// })
+
 /*------------------------------------------------------------------------*/
 
 
@@ -216,6 +185,7 @@ const dailyOptions = {
 const barChart = new Chart(dailyCanvas, dailyOptions)
 /*------------------------------------------------------------------------*/
 
+
 /*------------------------ MOBILE USERS ---------------------------------*/
 const mobileCanvas = document.querySelector('#doughnut-chart').getContext('2d')
 
@@ -253,4 +223,84 @@ const mobileOptions = {
 }
 
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
+/*------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------ TRAFFIC NAVIGATION NOT IN USE FOR THIS PROJECT---------------------------------*/
+// the 'options 'variable selects all label elements 
+// the 'slider' variable selects the span element
+
+/*  sliderStyles function: 
+    the 'labelWidth' variable - retrieves the width of the label element and sets 
+    that number as its value.
+    --- NOTE: it doesn't matter what index value of the four
+        labels are chosen because it is setting the same size for each of them. 
+        this variable stores the width as its value ---
+
+// the second line of css converts the value of 'labelWidth' into pixels - 
+   setting the width of the slider.
+
+// the index value of options is set to 0 so the the first label is highlighted/selected.
+   it is value positioned left is based on the value of its offsetLeft property 
+
+        NOTE:
+        element.getBoundingClientRect method returns a DOMRec object providing information about the 
+        size of an element and its position relative to the viewport.
+*/
+
+/*  options array: for each selection (label) 
+    the position variable retrieves information about the size of the element selected and 
+    stores that information as its value - setting the size of the slider as much as there is space for the element.
+*/
+
+/*  the left variable retrieves the x coordinate using destructuring syntax - setting the slider in position
+    this makes it possible for the slider to go where the user clicks of it to go out of the four options.
+*/
+
+// const options = [...document.querySelectorAll('.slider-label')]
+// const slider = document.querySelector('.slider')
+
+// const sliderStyles = () => {
+//   const labelWidth = options[0].clientWidth;
+//   slider.style.width = `${labelWidth}px`;
+//   slider.style.left = `${options[0].getBoundingClientRect().left}px`
+
+    //   console.log('labelWidth:', labelWidth)
+    //   console.log('options:', options)
+    //   console.log('SliderWidth:', slider.style.width = `${labelWidth}px`)
+    //   console.log('SliderLeft:',slider.style.left = `${options[0].getBoundingClientRect().left}px`)
+
+// }
+
+// window.addEventListener('load', sliderStyles)
+// window.addEventListener('resize', sliderStyles)
+
+// options.forEach(selection => {
+//   selection.addEventListener('click', (label) => {
+//     const position = selection.getBoundingClientRect()
+//     const { left } = position
+
+//     slider.style.left = left + 'px'
+    // console.log('position:',position)
+    // console.log('left:',left)
+
+//   })
+// })
+
 /*------------------------------------------------------------------------*/

@@ -9,11 +9,6 @@ h1, h2, h3, h4, p, fieldset, label, input, form, span, button, div  {
 
 /* ================= GRID PROPERTIES ================= */
 .grid-container {
-    /* height: 100vh;
-    width: 100vw;
-    margin: 0 auto;
-    padding: 0; */
-    height: 100vh;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -31,17 +26,6 @@ nav {
     grid-area: navigation;
 }
 
-.main-header,
-.alert,
-.traffic,
-.social-stats,
-.new-members,
-.activity,
-.messaging,
-.settings {
-    grid-column: 1 / span 2;
-}
-
 /* =================================================== */
 
 /* ===================== HEADER ===================== */
@@ -57,7 +41,6 @@ header {
 } 
 
 header > h1 {
-    /* margin-right: auto; */
     font-size: 1.5em;
     margin-top: 0;
     margin-bottom: 0;
@@ -176,7 +159,7 @@ nav ul li:nth-child(2) {
 }
 
 .tab {
-    height: 65px;
+    height: 67px;
     background-color: rgb(236, 235, 238);
     border-bottom: 1px solid rgb(207, 205, 211);
     border-left: 1px solid rgb(207, 205, 211);
@@ -313,10 +296,23 @@ a[href$="link"] :hover {
 /* ================== TRAFFIC ==================  */
 
 .traffic {
-    grid-column: 1 / span 2;
+    /* grid-column: 1 / span 2; */
+    display: flex;
+    flex-direction: column;
+    gap: 18.72px;
 }
 
-.slider-nav {
+.traffic-nav {
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-around;
+    gap: 18.72px;
+    height: fit-content;    
+    background-color: none;
+}
+
+/* .slider-nav {
     display: flex;
     align-content: center;
     justify-content: space-between; 
@@ -349,8 +345,9 @@ a[href$="link"] :hover {
     border-radius: 20px;
     height: 40px;
     background-color: #65bd63;;
-    transition: .25s ease-out;
-}  
+    transition: .25s ease-out; 
+}  */
+
 /* ==================================================== */
 
 /* ====================== CHARTS ======================  */
@@ -461,7 +458,6 @@ canvas {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* padding-bottom: 10px; */
 }
 
 .message-container :first-child,
@@ -497,75 +493,12 @@ canvas {
     border: 1.5px solid #7477bf;
 }
 
-/* ================== SETTINGS TOGGLE BUTTON ================== */
-/* .settings {
+/* ================== SETTINGS TIMEZONE ================== */
+
+.settings {
     display: flex;
     flex-direction: column;
-    gap: 10px; */
-    /* margin-bottom: 40px */
-/* }
-
-.settings-label {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    position: relative;
-    width: 60px;
-    height: 30px;
-    margin-left: 227px; */
-    /* margin-bottom: 13px; */
-    /* top: 6.5px; */
-/* }
-
-.settings-label input {
-    display: none;
-}
-
-.settings-label input:checked + .rounded-slider {
-    background: #7578c0;
-}
-
-.settings-label input:checked + .rounded-slider:after {
-    transform: translateX(30px);
-}
-
-/* .settings-label label p{
-    min-width: 175px;
-    margin-right: 112px;
-    margin-top: 0;
-    margin-bottom: 0;
-} */
-/* 
-.rounded-slider {
-    position: absolute;
-    background: #ababab;
-    border-radius: 20px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    transition: all .3s ease;
-}
-
-.rounded-slider:after {
-    position: absolute;
-    content: ' '; 
-    width: 28px;
-    height: 28px;
-    background:#fff;
-    border-radius: 50%;
-    top: 1px;
-    left: 1px;
-    transition: all .25s ease;
-}  */
-/* ================================================== */
-
-/* ================== SETTINGS TIMEZONE ================== */
-/* 45px 45px 70px 44px 36px 0px */
-.settings {
-    display: grid;
-    grid-template-rows: 44px 41px 74px 44px 37px 0px;
-    grid-gap: 15px;
+    gap: 20px;
 }
 
 .settings label {
@@ -575,6 +508,7 @@ canvas {
 }
 
 .form-field {
+    margin-top: auto;
     padding: 10px;
     border-radius: 5px;
     border: 1.5px solid #cdcdcd;
@@ -583,11 +517,6 @@ canvas {
 }
 
 
-/* .settings-cc {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-} */
 
 /* .form-field {
     position: relative;
@@ -636,6 +565,8 @@ canvas {
 .settings-buttons {
     display: flex;
     gap: 15px;
+    padding-bottom: 20px;
+    /* margin-top: auto; */
     /* margin-bottom: 15px; */
 }
 
@@ -675,23 +606,12 @@ canvas {
         padding-top: 20px;
     }
 
-
-    /* WORKING ON VERTICAL LINE FOR 1028PX */
-    /* FINISH SLIDER AGAIN */
     main { 
         display: grid;
         grid-template-columns: 1fr 1fr;
-
-        /* background:linear-gradient(red,red) center/2px 100% no-repeat */
     }
 
-    .daily,
-    .new-members,
-    .messaging {
-        background: linear-gradient(#cecece,#cecece) right/1px 100% no-repeat;
-    }
-
-    /* .main-header,
+    .main-header,
     .alert,
     .traffic,
     .social-stats,
@@ -700,15 +620,22 @@ canvas {
     .messaging,
     .settings {
         grid-column: 1 / span 2;
-    } */
-
-    /* .daily{
-        grid-column: 1/ span 1;
     }
 
-    .mobile {
-        grid-column: 2/ span 3;
-    } */
+    .traffic-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .traffic-header h3 {
+        margin-right: auto;
+    }
+    
+    .traffic-nav {
+        width: 50%;
+        flex-direction: row;
+    }
 
     .social-cc {
         display: flex;
@@ -741,13 +668,6 @@ canvas {
         text-align: initial;
     }
 
-    /* .messaging {
-        padding-bottom: 0;
-    } */
-    
-    /* .settings {
-        grid-template-rows: 44px 44px 109px 46px 0fr
-    } */
 }
 
 /* ====================== DESKTOP ==================== */
@@ -760,7 +680,6 @@ canvas {
     
     .messaging {
         border-bottom: none;
-        /* padding-bottom: initial; */
     }
 
     .activity,
@@ -768,18 +687,11 @@ canvas {
         grid-column: 2/ span 1;
     }
 
-    /* .settings-buttons {
-        margin-bottom: 0;
-    } */
-    /* .messaging, .settings {
-        margin-bottom: 15px;
-    } */
-
-    /* .settings {
-        display: grid;
-        grid-template-rows: 1fr 1fr 2fr 1fr;
-    } */
+    .daily,
+    .new-members,
+    .messaging {
+        background: linear-gradient(#cecece,#cecece) right/1px 100% no-repeat;
+    }
     
-
 }
 
