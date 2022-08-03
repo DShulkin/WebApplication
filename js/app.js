@@ -64,7 +64,7 @@ for (let i = 0; i < inbox.length; i++) {
 bell.addEventListener('click', e => {
     if (alert.style.display = 'none') {
         alert.style.display = 'block'
-        //console.log('the alert button appears')
+        //console.log('alert button appears')
     }
 })
 
@@ -79,7 +79,7 @@ const dataArray = [
     [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
     [300, 500, 2500, 1050, 1850, 1500, 750, 2250, 1250, 2000, 2500],     
     [1000, 300, 500, 950, 1150, 1300, 1400, 2000, 2500, 700, 2000],
-    [1500, 700, 1050, 950, 1200, 2500, 750, 850, 1050, 900, 300]
+    [1500, 1400, 1050, 950, 1200, 2500, 750, 850, 1050, 900, 300]
 ]
 
 const trafficCanvas = document.querySelector('#traffic-chart').getContext('2d')
@@ -128,24 +128,14 @@ for (let i = 0; i < labels.length; i++) {
         // console.log(labels[i], 'this label was clicked')
         if (labels[i] === labels[i]) {
             trafficChart.data.datasets[0].data = dataArray[i];
-            console.log(dataArray[i])
-            console.log(labels[i] === labels[i])
-
+            // console.log(dataArray[i])
+            // console.log(labels[i] === labels[i])
         }
         trafficChart.update()
     })
 }
 
 let trafficChart = new Chart(trafficCanvas, trafficOption)
-
-// const chart = document.querySelector('#traffic-chart')
-
-// const updateChart = (chart, newData => {
-//     chart.data.labels = newData.labels
-//     chart.data.datasets[0].data = newData.datasets[0].data
-//     chart.update()
-// })
-
 /*------------------------------------------------------------------------*/
 
 
@@ -225,6 +215,73 @@ const mobileOptions = {
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
 /*------------------------------------------------------------------------*/
 
+/*------------------------ AUTOCOMPLETE SEARCH FILTER ---------------------------------*/
+
+let names = [
+    'Victoria Chambers',
+    'Dayle Byrd',
+    'Dawn Wood',
+    'Dan Oliver'
+]
+
+const sortedNames = names.sort()
+const input = document.querySelector('.search-user')
+
+input.addEventListener('keyup', (e) => {
+    removeElements()
+    for (let i of sortedNames) {
+        if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != ' ') {
+
+            let listItem = document.createElement('li')
+            listItem.classList.add('list-items')
+            listItem.style.cursor = 'pointer'   
+            listItem.setAttribute("onclick", "displayNames('" + i + "')")
+        
+            let word = "<b>" + i.substring(0, input.value.length) + "</b>"
+            word += i.substring(input.value.length)  
+        
+            listItem.innerHTML = word
+
+            let list = document.createElement('ul')
+            list.classList.add('list')
+            list.appendChild(listItem)
+
+            console.log(word, 1)
+            console.log(list, 2)
+            console.log(i, 3)
+        }
+    }
+})
+
+
+const displayNames = (value) => {
+    input.value = value
+    removeElements()
+}
+
+const removeElements = () => {
+    let items = document.querySelectorAll('.list-items')
+    items.forEach((item) => {
+        item.remove()
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,6 +300,44 @@ const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 
 /*------------------------ TRAFFIC NAVIGATION NOT IN USE FOR THIS PROJECT---------------------------------*/
+    // <!-- <section class="settings">
+    // <h3>Settings</h3> -->
+    // <!--SLIDER BUTTONS-->
+    //     <!-- <form class="test">
+    //         <div class="settings-label">
+    //             <input type="checkbox" id="email">
+    //             <div class="rounded-slider"></div>
+    //             <label class="settings-label" for="email" name="receive-email">
+    //                 Send Email Notifications
+    //             </label>
+    //         </div>
+        
+    //         <div class="settings-label">
+    //             <input type="checkbox" id="public-profile">
+    //             <div class="rounded-slider"></div>
+    //             <label class="settings-label" for="public-profile" name="public-profile">
+    //                 Set Profile To Public
+    //             </label>
+    //         </div> -->
+    // <!--SLIDER BUTTONS-->
+    //         <!-- <div class="timezone">
+    //             <select>
+    //                 <option disabled selected>Select a Timezone</option>
+    //                 <option>Atlantic Standard</option>
+    //                 <option>Eastern Standard</option>
+    //                 <option>Central Standard</option>
+    //                 <option>Mountain Standard</option>
+    //             </select>
+    //             <div class="arrow"></div>
+    //         </div>
+
+    //         <div class="settings-buttons">
+    //             <button id="save">Save</button>
+    //             <button id="cancel">Cancel</button>
+    //         </div>
+    //     </form>
+    // </section> -->
+    
 // the 'options 'variable selects all label elements 
 // the 'slider' variable selects the span element
 
@@ -302,5 +397,4 @@ const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 //   })
 // })
-
 /*------------------------------------------------------------------------*/

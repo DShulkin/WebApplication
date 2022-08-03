@@ -88,17 +88,10 @@
     </div>
         
 
-
     <!---- TRAFFIC NAVIGATION ---->
     <section class="traffic">
         <div class="traffic-header">
         <h3>Traffic</h3>
-            <!-- <ul class="traffic-nav">
-                <li><a href="#" class="traffic-nav-link">Hourly</a></li>
-                <li><a href="#" class="traffic-nav-link">Daily</a></li>
-                <li><a href="#" class="traffic-nav-link">Weekly</a></li>
-                <li><a href="#" class="traffic-nav-link">Monthly</a></li>
-            </ul> -->
             <div class="traffic-nav switch-toggle switch-ios">
                 <input id="hourly" name="link" type="radio" checked>
                 <label for="hourly">Hourly</label>
@@ -120,24 +113,6 @@
             <canvas id="traffic-chart" aria-label="Traffic Chart" role="img"></canvas>
         </div>
     </section>
-
-        <!-- <div class="switch-toggle switch-candy switch-ios">
-            <input type="radio" class="slider-input" name="option" id="hourly" checked>
-            <label for="hourly" class="slider-label">Hourly</label>
-
-            <input type="radio" class="slider-input" name="option" id="daily">
-            <label for="daily" class="slider-label">Daily</label>
-
-            <input type="radio" class="slider-input" name="option" id="weekly">
-            <label for="weekly" class="slider-label">Weekly</label>
-
-            <input type="radio" class="slider-input" name="option" id="monthly">
-            <label for="monthly" class="slider-label">Monthly</label>
-            <span class="slider"></span>
-          <a></a>
-        </div> -->
-
-
 
     <!---- DAILY ---->
     <section class="daily">
@@ -304,11 +279,11 @@
     <!---- MESSAGING WIDGET ---->
     <section class="messaging">
         <h3>Message Users</h3>
-        <form class="message-container">
-            <input type="text" placeholder="Search for user" class="form-field" id="user-field">
+        <div class="message-container">
+            <input type="text" placeholder="Search User" class="search-user" id="user-search">
             <textarea placeholder="Message to user" id="messageField" cols="30" rows="6"></textarea>
             <button id="send">Send</button>
-        </form>
+        </div>
     </section>
     
 
@@ -339,7 +314,7 @@
             </span>
             </label>
 
-            <select class="form-field" id="timezone">
+            <select class="timezone" id="timezone">
                 <option disabled selected>Select a Timezone</option>
                 <option>Atlantic Standard</option>
                 <option>Eastern Standard</option>
@@ -353,45 +328,6 @@
                 <button id="cancel">Cancel</button>
             </div>
     </section>
-
-    <!-- <section class="settings">
-        <h3>Settings</h3> -->
-    <!--SLIDER BUTTONS-->
-        <!-- <form class="test">
-            <div class="settings-label">
-                <input type="checkbox" id="email">
-                <div class="rounded-slider"></div>
-                <label class="settings-label" for="email" name="receive-email">
-                    Send Email Notifications
-                </label>
-            </div>
-        
-            <div class="settings-label">
-                <input type="checkbox" id="public-profile">
-                <div class="rounded-slider"></div>
-                <label class="settings-label" for="public-profile" name="public-profile">
-                    Set Profile To Public
-                </label>
-            </div> -->
-    <!--SLIDER BUTTONS-->
-            <!-- <div class="timezone">
-                <select>
-                    <option disabled selected>Select a Timezone</option>
-                    <option>Atlantic Standard</option>
-                    <option>Eastern Standard</option>
-                    <option>Central Standard</option>
-                    <option>Mountain Standard</option>
-                </select>
-                <div class="arrow"></div>
-            </div>
-
-            <div class="settings-buttons">
-                <button id="save">Save</button>
-                <button id="cancel">Cancel</button>
-            </div>
-        </form>
-    </section> -->
-    
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
