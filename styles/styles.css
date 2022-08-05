@@ -70,18 +70,6 @@ section,
     border-bottom: 1px solid #cecece;
 }
 
-
-/* section::after {
-    content: '';
-    position: absolute;
-    margin: auto;
-    right: 0px;
-    bottom: 90px;
-    left: 55px;
-    height: 1px;
-    background-color: red;
-} */
-
 .notifications {
     display: flex;
     height: 1.5em;
@@ -125,8 +113,8 @@ section,
     min-width: max-content;
     font-size: .85em;
 }
-/* ====================================================== */
 
+/* ====================================================== */
 
 /* ===================== NAVIGATION ===================== */
 .navigation {
@@ -145,9 +133,6 @@ nav ul li  {
 nav ul li:nth-child(2) {
     width: 30px;
 }
-
-
-/* =================================================== */
 .main-header {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -207,6 +192,8 @@ a[href$="link"] :hover {
 		box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
 	}
 }
+
+/* =================================================== */
 
 /* ===================== ALERT ===================== */
 .dropdown {
@@ -293,7 +280,9 @@ a[href$="link"] :hover {
     border-radius: 50px;
 }
 
-/* ================== TRAFFIC ==================  */
+/* =================================================== */
+
+/* ==================== TRAFFIC ====================  */
 
 .traffic {
     /* grid-column: 1 / span 2; */
@@ -348,7 +337,7 @@ a[href$="link"] :hover {
     transition: .25s ease-out; 
 }  */
 
-/* ==================================================== */
+/* ===================================================== */
 
 /* ====================== CHARTS ======================  */
 
@@ -411,6 +400,8 @@ canvas {
     width: 75px;
 }  
 
+/* ==================================================== */
+
 /*=========== NEW MEMBERS & RECENT ACTIVITY ===========*/
  .members-cc,
  .activity-cc {
@@ -453,22 +444,23 @@ canvas {
     text-decoration: none;
 }
 
+/* =================================================== */
+
 /* ================== MESSAGE USERS ================== */
 .list {
     width: 100%;
     list-style-type: none;
     background-color: #fff;
     border-radius:  0 0 5px 5px ;
-    max-height: 200px;
+    max-height: fit-content;
     overflow-y: auto;
-    top: 70px;
-    left: 0;
+    /* top: 70px; */
+    /* left: 0; */
 }
 
 .list-items {
-    width: calc(100% - 30px);
+    /* width: calc(100% - 30px); */
     padding: 15px;
-
 }
 
 .list-items:hover {
@@ -481,8 +473,9 @@ canvas {
     gap: 15px;
 }
 
-.message-container :first-child,
-.message-container textarea {
+.message-container input,
+.message-container textarea,
+.timezone {
     padding: 10px;
     border-radius: 5px;
     border: 1.5px solid #cdcdcd;
@@ -504,8 +497,6 @@ canvas {
     font-size: 14px;
     flex: 1;
 }
-/* ADD SOME LEFT PADDING TO THE TEXT IN THE SEARCH FIELD "SEARCH USER"
-SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
 
 .message-container input:focus,
 .message-container textarea:focus,
@@ -515,6 +506,8 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
     transition: all .05s ease;
     border: 1.5px solid #7477bf;
 }
+
+/* =================================================== */
 
 /* ================== SETTINGS TIMEZONE ================== */
 
@@ -530,13 +523,7 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
     align-items: center;
 }
 
-.search-user,
 .timezone {
-    margin-top: auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1.5px solid #cdcdcd;
-    background: #f5f5f5;
     color: #cdcdcd
 }
 
@@ -554,7 +541,8 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
     color: #cdcdcd
   } */
 
-  /* .arrow {
+  /* 
+  .arrow {
     position: absolute;
     border: solid #7578c0;
     border-width: 0 2px 2px 0;
@@ -584,7 +572,7 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
 
 /* ================================================== */
 
-/* ================== SETTINGS SAVE/CANCEL ================== */
+/* ============== SETTINGS SAVE/CANCEL ============== */
 .settings-buttons {
     display: flex;
     gap: 15px;
@@ -596,7 +584,6 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
  }
  
 /* ================================================== */
-
 
 /* ====================== TABLET ==================== */
 @media screen and (min-width: 768px) {
@@ -677,6 +664,7 @@ SO YOU CAN SET A 2PX VALUE ON THE BORDER FOR THE RULES BELOW */
     }
 
 }
+/* =================================================== */
 
 /* ====================== DESKTOP ==================== */
 @media screen and (min-width: 1024px) { 

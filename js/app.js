@@ -72,8 +72,7 @@ bell.addEventListener('click', e => {
 
 
 /*------------------------ TRAFFIC CHART ---------------------------------*/
-const labels = document.querySelectorAll('.traffic-nav label') //NODE LIST 
-// const labels = [...document.querySelectorAll('.traffic-nav label')] //ARRAY LIST
+const labels = document.querySelectorAll('.traffic-nav label') 
 
 const dataArray = [   
     [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
@@ -217,42 +216,43 @@ const mobileChart = new Chart(mobileCanvas, mobileOptions)
 
 /*------------------------ AUTOCOMPLETE SEARCH FILTER ---------------------------------*/
 
-let names = [
+let userNames = [
     'Victoria Chambers',
     'Dayle Byrd',
     'Dawn Wood',
     'Dan Oliver'
 ]
 
-const sortedNames = names.sort()
 const input = document.querySelector('.search-user')
-
+const list = document.createElement('ul')
 input.addEventListener('keyup', (e) => {
+    list.classList.add('list')
+    insertAfter(list, input)
     removeElements()
-    for (let i of sortedNames) {
+    for (let i of userNames) {
         if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != ' ') {
-
             let listItem = document.createElement('li')
             listItem.classList.add('list-items')
             listItem.style.cursor = 'pointer'   
+            listItem.style.padding = '10px 15px 10px 15px'
             listItem.setAttribute("onclick", "displayNames('" + i + "')")
         
             let word = "<b>" + i.substring(0, input.value.length) + "</b>"
             word += i.substring(input.value.length)  
         
             listItem.innerHTML = word
-
-            let list = document.createElement('ul')
-            list.classList.add('list')
             list.appendChild(listItem)
 
-            console.log(word, 1)
-            console.log(list, 2)
-            console.log(i, 3)
+            if (input.value.length === 0) {
+                list.remove()
+            }
         }
     }
 })
 
+const insertAfter = (newNode, existingNode) => {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}
 
 const displayNames = (value) => {
     input.value = value
@@ -397,4 +397,7 @@ const removeElements = () => {
 
 //   })
 // })
+
+// const labels = [...document.querySelectorAll('.traffic-nav label')] //ARRAY LIST
+
 /*------------------------------------------------------------------------*/
