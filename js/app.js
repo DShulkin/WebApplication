@@ -225,6 +225,11 @@ let userNames = [
 
 const input = document.querySelector('.search-user')
 const list = document.createElement('ul')
+document.body.onkeyup = function(e) {
+    if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
+        list.remove() 
+        }
+    }
 input.addEventListener('keyup', (e) => {
     list.classList.add('list')
     insertAfter(list, input)
@@ -232,7 +237,7 @@ input.addEventListener('keyup', (e) => {
     for (let i of userNames) {
         if (i.toLowerCase().startsWith(input.value.toLowerCase()) && input.value != ' ') {
             let listItem = document.createElement('li')
-            listItem.classList.add('list-items')
+            listItem.classList.add('list-item')
             listItem.style.cursor = 'pointer'   
             listItem.style.padding = '10px 15px 10px 15px'
             listItem.setAttribute("onclick", "displayNames('" + i + "')")
@@ -243,7 +248,7 @@ input.addEventListener('keyup', (e) => {
             listItem.innerHTML = word
             list.appendChild(listItem)
 
-            if (input.value.length === 0) {
+            if (input.value.length === 0 || input.value == ' '  ) {
                 list.remove()
             }
         }
@@ -260,13 +265,20 @@ const displayNames = (value) => {
 }
 
 const removeElements = () => {
-    let items = document.querySelectorAll('.list-items')
+    let items = document.querySelectorAll('.list-item')
     items.forEach((item) => {
         item.remove()
     })
 }
 
+//ERROR: WHEN SELECTING A NAME FROM THE AUTOCOMPLETE LIST
+// EXTRA SPACE IS ADDED TO THE BOTTOM OF THE INPUT FIELD. 
+// EVEN WHEN TYPING LETTERS THAT DON'T MATCH THE STRING IN THE LISTITEMS
+// THE SAME ISSUE OCCURS.
+// WHEN ENTERING AN EMPTY CHARACTER SUCH AS A SPACE AS THE FIRST KEY, AN UNORDERD LIST IS CREATED
+// FIGURE OUT HOW TO REMOVE THE UL ON EMPTY SPACE 
 
+//https://www.google.com/search?q=if+input+vlaue+is+a+space+dont+create+ul&oq=if+input+vlaue+is+a+space+dont+create+ul&aqs=chrome..69i57j33i10i160l3.11769j0j7&sourceid=chrome&ie=UTF-8
 
 
 
@@ -399,5 +411,8 @@ const removeElements = () => {
 // })
 
 // const labels = [...document.querySelectorAll('.traffic-nav label')] //ARRAY LIST
+    
+
+// console.log(existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling))
 
 /*------------------------------------------------------------------------*/
