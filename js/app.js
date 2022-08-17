@@ -288,7 +288,6 @@ send.addEventListener('click', () => {
 // /*-----------------------------------------------------------------------*/
 
 // /*------------------------ LOCAL STORAGE --------------------------------*/
-// ////////THS WORKS///////////
 const public = document.querySelector('.public');
 const email = document.querySelector('.email');
 const timezone = document.querySelector('.timezone');
@@ -469,7 +468,7 @@ storage();
 
 
 
-/////DOESNT WORK/////
+/////DOESN'T WORK/////
 // const settingsButtons = document.querySelector('.settings-buttons').children
 // const settings = document.querySelectorAll('.settingsForm input')
 // const timezone = document.querySelector('.timezone');

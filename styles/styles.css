@@ -511,7 +511,7 @@ canvas {
 
 /* ================== SETTINGS TIMEZONE ================== */
 
-.settingsForm {
+.settings {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -681,6 +681,10 @@ canvas {
     .activity,
     .settings {
         grid-column: 2/ span 1;
+    }
+
+    .timezone {
+       margin-top: 17px;
     }
 
     .daily,
