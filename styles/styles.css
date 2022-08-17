@@ -683,8 +683,9 @@ canvas {
         grid-column: 2/ span 1;
     }
 
-    .timezone {
-       margin-top: 17px;
+    .settings-buttons {
+        margin-top: 17px;
+        padding-bottom: 0;
     }
 
     .daily,
