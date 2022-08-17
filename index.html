@@ -280,38 +280,39 @@
     <section class="messaging">
         <h3>Message Users</h3>
         <div class="message-container">
-            <input type="text" placeholder="Search User" class="search-user" id="user-search">
+            <input type="text" placeholder="Search User" class="search-user" id="userField">
             <textarea placeholder="Message to user" id="messageField" cols="30" rows="6"></textarea>
-            <button id="send">Send</button>
+            <button type="button" id="send">Send</button>
         </div>
     </section>
     
 
     <!-- SETTINGS -->
     <section class="settings">
-        <h3>Settings</h3>                         
-        <label class="switch-light switch-ios" onclick="">
-            <input type="checkbox">
-            <strong>
-                Send Email Notifications
-            </strong>
-            <span>
-                <span>Off</span>
-                <span>On</span>
-                <a></a>
-            </span>
-            </label>
-
+        <h3>Settings</h3>       
+        <form class="settingsForm">          
             <label class="switch-light switch-ios" onclick="">
-            <input type="checkbox">
-            <strong>
-                Set To Public
-            </strong>
-            <span>
-                <span>Off</span>
-                <span>On</span>
-                <a></a>
-            </span>
+                <input class='public' type="checkbox">
+                <strong>
+                    Send Email Notifications
+                </strong>
+                <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                </span>
+                </label>
+
+                <label class="switch-light switch-ios" onclick="">
+                <input class="email" type="checkbox">
+                <strong>
+                    Set To Public
+                </strong>
+                <span>
+                    <span>Off</span>
+                    <span>On</span>
+                    <a></a>
+                </span>
             </label>
 
             <select class="timezone" id="timezone">
@@ -327,9 +328,10 @@
             <!-- <div class="arrow"></div> -->
 
             <div class="settings-buttons">
-                <button id="save">Save</button>
-                <button id="cancel">Cancel</button>
+                <button type='button' id="save">Save</button>
+                <button type='button' id="cancel">Cancel</button>
             </div>
+        </form>        
     </section>
 </main>
 

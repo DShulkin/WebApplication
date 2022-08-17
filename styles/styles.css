@@ -511,7 +511,7 @@ canvas {
 
 /* ================== SETTINGS TIMEZONE ================== */
 
-.settings {
+.settingsForm {
     display: flex;
     flex-direction: column;
     gap: 20px;

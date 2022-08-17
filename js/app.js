@@ -70,7 +70,6 @@ bell.addEventListener('click', e => {
 
 /*-----------------------------------------------------------------------------*/
 
-
 /*------------------------ TRAFFIC CHART ---------------------------------*/
 const labels = document.querySelectorAll('.traffic-nav label') 
 
@@ -137,7 +136,6 @@ for (let i = 0; i < labels.length; i++) {
 let trafficChart = new Chart(trafficCanvas, trafficOption)
 /*------------------------------------------------------------------------*/
 
-
 /*------------------------ DAILY TRAFFIC ---------------------------------*/
 const dailyCanvas = document.querySelector('#bar-chart').getContext('2d')
 
@@ -173,7 +171,6 @@ const dailyOptions = {
 
 const barChart = new Chart(dailyCanvas, dailyOptions)
 /*------------------------------------------------------------------------*/
-
 
 /*------------------------ MOBILE USERS ---------------------------------*/
 const mobileCanvas = document.querySelector('#doughnut-chart').getContext('2d')
@@ -214,8 +211,7 @@ const mobileOptions = {
 const mobileChart = new Chart(mobileCanvas, mobileOptions)
 /*------------------------------------------------------------------------*/
 
-/*------------------------ AUTOCOMPLETE SEARCH FILTER ---------------------------------*/
-
+/*--------------- AUTOCOMPLETE SEARCH USER FILTER ------------------------*/
 let userNames = [
     'Victoria Chambers',
     'Dayle Byrd',
@@ -225,12 +221,13 @@ let userNames = [
 
 const input = document.querySelector('.search-user')
 const list = document.createElement('ul')
-document.body.onkeyup = function(e) {
-    if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
-        list.remove() 
-        }
-    }
+
 input.addEventListener('keyup', (e) => {
+    document.body.onkeyup = function(e) {
+        if (e.key == " "  || e.key == 32 || e.code == "Space") {
+            list.remove() 
+            }
+        }
     list.classList.add('list')
     insertAfter(list, input)
     removeElements()
@@ -248,7 +245,7 @@ input.addEventListener('keyup', (e) => {
             listItem.innerHTML = word
             list.appendChild(listItem)
 
-            if (input.value.length === 0 || input.value == ' '  ) {
+            if (input.value.length == 0 || input.value == ' '  ) {
                 list.remove()
             }
         }
@@ -270,15 +267,67 @@ const removeElements = () => {
         item.remove()
     })
 }
+/*-----------------------------------------------------------------------*/
 
-//ERROR: WHEN SELECTING A NAME FROM THE AUTOCOMPLETE LIST
-// EXTRA SPACE IS ADDED TO THE BOTTOM OF THE INPUT FIELD. 
-// EVEN WHEN TYPING LETTERS THAT DON'T MATCH THE STRING IN THE LISTITEMS
-// THE SAME ISSUE OCCURS.
-// WHEN ENTERING AN EMPTY CHARACTER SUCH AS A SPACE AS THE FIRST KEY, AN UNORDERD LIST IS CREATED
-// FIGURE OUT HOW TO REMOVE THE UL ON EMPTY SPACE 
+/*---------------------- MESSAGING SYSTEM -------------------------------*/
+const send = document.querySelector('#send')
+const message = document.querySelector('#messageField')
+const user = document.querySelector('#userField')
 
-//https://www.google.com/search?q=if+input+vlaue+is+a+space+dont+create+ul&oq=if+input+vlaue+is+a+space+dont+create+ul&aqs=chrome..69i57j33i10i160l3.11769j0j7&sourceid=chrome&ie=UTF-8
+send.addEventListener('click', () => {
+    if (user.value === "" && message.value === "") {
+           window.alert("Please fill out user and message fields before sending")
+        } else if (user.value === "" ) {
+            window.alert("Please fill out user field before sending")
+        } else if (message.value === "" ) {
+            window.alert("Please fill out message field before sending")
+        } else {
+            window.alert(`Message successfully sent to: ${user.value}`)
+        }
+})
+// /*-----------------------------------------------------------------------*/
+
+// /*------------------------ LOCAL STORAGE --------------------------------*/
+// ////////THS WORKS///////////
+const public = document.querySelector('.public');
+const email = document.querySelector('.email');
+const timezone = document.querySelector('.timezone');
+const save = document.querySelector('.settings-buttons #save');
+const clear = document.querySelector('.settings-buttons #cancel');
+
+save.addEventListener('click', () => {
+    localStorage.setItem('email', email.checked)
+    localStorage.setItem('public', public.checked)
+    localStorage.setItem('timezone', timezone.value)
+})
+
+clear.addEventListener('click', () => {
+    localStorage.removeItem('email', email.checked)
+    localStorage.removeItem('public', public.checked)
+    localStorage.removeItem('timezone', timezone.value)
+    email.checked = null
+    public.checked = null
+    timezone.value = 'Select a Timezone'
+})
+ 
+const storage = () => {
+    if (localStorage.email === "true") {
+      email.checked = true;
+    } else {
+      email.checked = false;
+    }
+    if (localStorage.public === "true") {
+      public.checked = true;
+    } else {
+      public.checked = false;
+    }
+    if (localStorage.timezone) {
+      timezone.value = localStorage.timezone;
+    }
+  };
+
+storage();
+/*-----------------------------------------------------------------------*/
 
 
 
@@ -311,7 +360,8 @@ const removeElements = () => {
 
 
 
-/*------------------------ TRAFFIC NAVIGATION NOT IN USE FOR THIS PROJECT---------------------------------*/
+
+/*------------------------ TRAFFIC NAVIGATION CODE NOT IN USE FOR THIS PROJECT---------------------------------*/
     // <!-- <section class="settings">
     // <h3>Settings</h3> -->
     // <!--SLIDER BUTTONS-->
@@ -416,3 +466,38 @@ const removeElements = () => {
 // console.log(existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling))
 
 /*------------------------------------------------------------------------*/
+
+
+
+/////DOESNT WORK/////
+// const settingsButtons = document.querySelector('.settings-buttons').children
+// const settings = document.querySelectorAll('.settingsForm input')
+// const timezone = document.querySelector('.timezone');
+
+// for (let i = 0; i < settings.length; i++) {
+
+//     settingsButtons[i].addEventListener('click', () => {
+//         localStorage.setItem('settings', settings[i].checked)
+//         localStorage.setItem('timezone', timezone.value)
+//     })
+
+//     settingsButtons[i].addEventListener('click', () => {
+//         localStorage.removeItem('settings', settings[i].checked)
+//         localStorage.removeItem('timezone', timezone.value)
+//         settings[i].checked = null
+//         timezone.value = 'Select a Timezone'
+//     })
+    
+//     const storage = () => {
+//         if (localStorage.settings[i] === "true") {
+//             settings[i].checked = true;
+//         } else {
+//             settings[i].checked = false;
+//         }
+
+//         if (localStorage.timezone) {
+//         timezone.value = localStorage.timezone;
+//         }
+//   }
+// storage()
+//
