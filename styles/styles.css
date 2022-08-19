@@ -527,6 +527,11 @@ canvas {
     color: #cdcdcd
 }
 
+select {
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+  }
 
 /* .form-field {
     position: relative;

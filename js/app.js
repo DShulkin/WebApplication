@@ -68,6 +68,19 @@ bell.addEventListener('click', e => {
     }
 })
 
+//Displays message when list item is  clicked.
+alertMsgs = document.querySelectorAll('.dropdown-menu li')
+    for (let i = 0; i < alertMsgs.length; i++) {
+            alertMsgs[i].addEventListener('click', () => {
+             if (alertMsgs[0] === alertMsgs[i]) {
+                window.alert('Welcome to my page!')
+             }
+             if (alertMsgs[1] === alertMsgs[i]) {
+                window.alert('Scroll around and click buttons to test functionality')
+             }
+            })
+        }
+
 /*-----------------------------------------------------------------------------*/
 
 /*------------------------ TRAFFIC CHART ---------------------------------*/
